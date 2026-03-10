@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy:   #0B0F3B;
+  --cream:  #F5F6FA;
+  --orange: #FF6A1A;
+  --purple: #7A2EFF;
+  --font-playfair:   var(--font-playfair, Georgia, serif);
+  --font-montserrat: var(--font-montserrat, Arial, sans-serif);
+}
+
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0B0F3B;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+  background-color: #F5F6FA;
+  color: #0B0F3B;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior-y: none;
+}
+
+/* ── LCP hero animation ── */
+@keyframes heroFadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-headline { animation: heroFadeUp .55s ease-out both; animation-delay:0ms; }
+.hero-subline  { animation: heroFadeUp .55s ease-out both; animation-delay:80ms; }
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg,#7A2EFF,#FF6A1A);
+  }
+  .gradient-bg {
+    background-image: linear-gradient(135deg,#7A2EFF,#FF6A1A);
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white
+      transition-all duration-300 hover:scale-105 hover:shadow-2xl min-h-[44px];
+    font-family: var(--font-montserrat),sans-serif;
+    background: linear-gradient(135deg,#7A2EFF,#FF6A1A);
+    box-shadow: 0 4px 24px rgba(122,46,255,.3);
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white
+      border-2 border-white/30 backdrop-blur-sm transition-all duration-300
+      hover:scale-105 hover:bg-white/10 min-h-[44px];
+    font-family: var(--font-montserrat),sans-serif;
+  }
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-navy leading-tight;
+    font-family: var(--font-playfair),Georgia,serif;
+  }
+  .card-hover { @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl; }
+  .font-playfair   { font-family: var(--font-playfair),Georgia,serif; }
+  .font-montserrat { font-family: var(--font-montserrat),Arial,sans-serif; }
+}
+
+::-webkit-scrollbar        { width:6px; }
+::-webkit-scrollbar-track  { background:#F5F6FA; }
+::-webkit-scrollbar-thumb  { background:linear-gradient(135deg,#7A2EFF,#FF6A1A); border-radius:3px; }
+
+/* ── Blog prose overrides ── */
+details > summary { user-select: none; }
+details[open] summary .rotate-45 { transform: rotate(45deg); }

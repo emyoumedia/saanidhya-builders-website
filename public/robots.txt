@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block dev/internal paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow major crawlers to index images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://www.saanidhyabuilders.com/sitemap.xml
