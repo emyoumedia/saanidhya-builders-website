@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Rajendra Babu",
+    "role": "Founder & CEO",
+    "experience": "25 years",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+    "imageAlt": "Rajendra Babu - Founder and CEO of Saanidhya Builders",
+    "bio": "Founded Saanidhya Builders in 2009 with a vision to bring transparency and quality to construction in Coimbatore. Civil engineering graduate from Coimbatore Institute of Technology.",
+    "linkedin": "#"
+  },
+  {
+    "name": "Kavitha Raj",
+    "role": "Chief Architect",
+    "experience": "18 years",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+    "imageAlt": "Kavitha Raj - Chief Architect at Saanidhya Builders Coimbatore",
+    "bio": "Award-winning architect specializing in sustainable residential design and Vastu-compliant layouts. M.Arch from Anna University, Chennai.",
+    "linkedin": "#"
+  },
+  {
+    "name": "Suresh Kumar",
+    "role": "Head of Engineering",
+    "experience": "20 years",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
+    "imageAlt": "Suresh Kumar - Head of Engineering at Saanidhya Builders",
+    "bio": "Structural engineering expert with experience across 300+ projects including high-rise commercial buildings and large residential complexes.",
+    "linkedin": "#"
+  },
+  {
+    "name": "Divya Menon",
+    "role": "Interior Design Lead",
+    "experience": "12 years",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+    "imageAlt": "Divya Menon - Interior Design Lead at Saanidhya Builders Coimbatore",
+    "bio": "Interior design specialist creating cohesive, functional living spaces. Known for blending contemporary aesthetics with traditional South Indian design sensibility.",
+    "linkedin": "#"
+  }
+]

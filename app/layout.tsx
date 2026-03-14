@@ -4,16 +4,8 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/ui/FloatingButtons'
+import company from '@/data/company.json'
 
-/*
-  Font strategy:
-  - Playfair Display: only load weights actually used in above-the-fold headings.
-    The h1 hero uses font-bold (700) and italic. Load ONLY those two.
-    All other weights load async via CSS.
-  - Montserrat: body font, display:swap — Georgia/Arial fallback until loaded.
-  - Both use display:'swap' so text renders instantly in fallback font,
-    then swaps when the real font is ready (no invisible text = no LCP penalty).
-*/
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
@@ -21,7 +13,7 @@ const playfair = Playfair_Display({
   weight: ['700'],
   style: ['normal', 'italic'],
   preload: true,
-  adjustFontFallback: false, // we handle fallback metrics manually in CSS
+  adjustFontFallback: false,
 })
 
 const montserrat = Montserrat({
@@ -35,24 +27,14 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Saanidhya Builders | Premium Construction Company in Coimbatore',
-    template: '%s | Saanidhya Builders Coimbatore',
+    default: company.seo.metaTitle,
+    template: `%s | Saanidhya Builders Coimbatore`,
   },
-  description:
-    'Saanidhya Builders is a leading construction company in Coimbatore offering premium residential construction, commercial construction, architectural design, and turnkey project services across Tamil Nadu.',
-  keywords: [
-    'construction company in Coimbatore',
-    'builders in Coimbatore',
-    'residential builders Coimbatore',
-    'commercial construction company Coimbatore',
-    'turnkey construction services Coimbatore',
-    'architectural design Coimbatore',
-    'home builders Coimbatore Tamil Nadu',
-    'building contractors Coimbatore',
-  ],
-  authors: [{ name: 'Saanidhya Builders' }],
-  creator: 'Saanidhya Builders',
-  publisher: 'Saanidhya Builders',
+  description: company.seo.metaDescription,
+  keywords: company.seo.keywords,
+  authors: [{ name: company.name }],
+  creator: company.name,
+  publisher: company.name,
   robots: {
     index: true,
     follow: true,
@@ -65,29 +47,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://www.saanidhyabuilders.com',
-    siteName: 'Saanidhya Builders',
-    title: 'Saanidhya Builders | Premium Construction Company in Coimbatore',
-    description:
-      'Building Dreams with Quality and Trust. Premium residential and commercial construction services in Coimbatore, Tamil Nadu.',
+    url: company.website,
+    siteName: company.name,
+    title: company.seo.metaTitle,
+    description: company.seo.metaDescription,
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Saanidhya Builders - Construction Company in Coimbatore',
+        alt: `${company.name} - Construction Company in Coimbatore`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Saanidhya Builders | Construction Company in Coimbatore',
-    description:
-      'Premium residential and commercial construction services in Coimbatore, Tamil Nadu.',
+    title: company.seo.metaTitle,
+    description: company.seo.metaDescription,
     images: ['/images/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://www.saanidhyabuilders.com',
+    canonical: company.website,
   },
   icons: {
     icon: [
@@ -102,49 +82,74 @@ export const metadata: Metadata = {
   },
 }
 
+// LocalBusiness schema — Service Area Business (no physical address)
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://www.saanidhyabuilders.com',
-  name: 'Saanidhya Builders',
-  description:
-    'Premium construction company in Coimbatore specializing in residential and commercial construction, architectural design, and turnkey projects.',
-  url: 'https://www.saanidhyabuilders.com',
-  telephone: '+91-98765-43210',
-  email: 'info@saanidhyabuilders.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '42, Avinashi Road',
-    addressLocality: 'Coimbatore',
-    addressRegion: 'Tamil Nadu',
-    postalCode: '641018',
-    addressCountry: 'IN',
+  '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+  '@id': company.website,
+  name: company.name,
+  description: company.description,
+  url: company.website,
+  telephone: company.contact.phone,
+  email: company.contact.email,
+  // Service Area Business — serves customers at their location
+  areaServed: {
+    '@type': 'City',
+    name: company.serviceArea.city,
+    containedInPlace: {
+      '@type': 'State',
+      name: company.serviceArea.state,
+    },
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 11.0168,
-    longitude: 76.9558,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Construction Services',
+    itemListElement: [
+      'Residential Construction',
+      'Commercial Construction',
+      'Turnkey Construction',
+      'House Construction',
+      'Villa Construction',
+      'Building Renovation',
+      'Architectural Planning',
+      'Building Design',
+      'Interior Design',
+      'Interior Renovation',
+    ].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name },
+    })),
   },
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '09:00',
-      closes: '18:00',
+      opens: company.hours.opens,
+      closes: company.hours.closes,
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '00:00',
+      closes: '00:00',
     },
   ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: company.contact.phone,
+    contactType: 'customer service',
+    areaServed: 'IN',
+    availableLanguage: ['English', 'Tamil'],
+  },
   sameAs: [
-    'https://www.facebook.com/saanidhyabuilders',
-    'https://www.instagram.com/saanidhyabuilders',
-    'https://www.linkedin.com/company/saanidhyabuilders',
+    company.social.facebook,
+    company.social.instagram,
+    company.social.linkedin,
+    company.social.youtube,
   ],
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
       <head>

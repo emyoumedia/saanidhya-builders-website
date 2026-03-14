@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Home, Building2, Palette, LayoutDashboard, Key, Hammer, CheckCircle2, ArrowRight } from 'lucide-react'
+import { Home, Building2, Palette, LayoutDashboard, Key, Hammer, CheckCircle2, ArrowRight  , HousePlus, Castle,  Sofa, PaintBucket } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
+import servicesData from '@/data/services.json'
+import {   } from 'lucide-react'
+
+const iconMap: Record<string, React.ElementType> = {
+  Home, Building2, Key, HousePlus, Castle, Hammer, Palette, LayoutDashboard, Sofa, PaintBucket,
+}
 import CTASection from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
@@ -14,56 +20,6 @@ export const metadata: Metadata = {
     'Comprehensive construction services in Coimbatore: Residential Construction, Commercial Construction, Architectural Design, Turnkey Projects, Renovation & Remodeling.',
 }
 
-const services = [
-  {
-    icon: Home,
-    title: 'Residential Construction',
-    description: 'We build dream homes that reflect your personality and lifestyle. From cozy 2BHK apartments to sprawling luxury villas, our residential construction services in Coimbatore are tailored to your vision and budget.',
-    benefits: ['Custom floor plans', 'Premium material sourcing', 'Vastu-compliant designs', '5-year structural warranty', 'Landscaping included'],
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-    color: '#7A2EFF',
-  },
-  {
-    icon: Building2,
-    title: 'Commercial Construction',
-    description: 'From IT parks to retail malls, our commercial construction expertise ensures functional, modern, and impressive structures that meet business demands and inspire productivity.',
-    benefits: ['LEED-certified options', 'Smart building integration', 'Compliance management', 'Scalable designs', 'Dedicated project manager'],
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
-    color: '#FF6A1A',
-  },
-  {
-    icon: Palette,
-    title: 'Architectural Design',
-    description: 'Our award-winning architects blend form and function to create spaces that are as beautiful as they are practical. We use cutting-edge 3D visualization to bring your ideas to life before construction begins.',
-    benefits: ['3D architectural renderings', 'Interior design integration', 'Structural engineering', 'Sustainable design options', 'Regulatory approvals'],
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
-    color: '#7A2EFF',
-  },
-  {
-    icon: LayoutDashboard,
-    title: 'Planning & Layout',
-    description: 'Our planning experts handle every aspect from site analysis to detailed layout drawings, ensuring optimal space utilization, structural integrity, and compliance with all local regulations.',
-    benefits: ['Site feasibility analysis', 'DTCP/CMDA approvals', 'Space optimization', 'Utility planning', 'Environmental assessment'],
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    color: '#FF6A1A',
-  },
-  {
-    icon: Key,
-    title: 'Turnkey Construction',
-    description: 'Our most comprehensive service — you hand us the concept, we deliver you the keys. Saanidhya Builders manages every aspect of your project from procurement to handover.',
-    benefits: ['End-to-end project management', 'Single point of contact', 'Cost-effective procurement', 'Quality control at every stage', 'Move-in ready delivery'],
-    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
-    color: '#7A2EFF',
-  },
-  {
-    icon: Hammer,
-    title: 'Renovation & Remodeling',
-    description: 'Breathe new life into your existing property. Our renovation experts can modernize, expand, or completely transform your home or office with minimal disruption.',
-    benefits: ['Structural assessment', 'Modern upgrades', 'Minimal downtime', 'Budget-friendly options', 'Post-renovation warranty'],
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
-    color: '#FF6A1A',
-  },
-]
 
 export default function ServicesPage() {
   return (
@@ -91,8 +47,8 @@ export default function ServicesPage() {
       <section className="py-24 bg-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="space-y-24">
-            {services.map((service, i) => {
-              const Icon = service.icon
+            {servicesData.map((service, i) => {
+              const Icon = iconMap[service.icon] || Home
               const isEven = i % 2 === 0
               return (
                 <AnimatedSection key={service.title}>

@@ -1,0 +1,43 @@
+{
+  "story": {
+    "heading": "From Vision to Landmark",
+    "paragraphs": [
+      "Founded in 2009 by Rajendra Babu with a small team of five passionate builders, Saanidhya Builders started with a single apartment project in Gandhipuram, Coimbatore.",
+      "Today, we have grown into a 200-member strong organisation delivering over 500 projects spanning luxury villas, commercial complexes, industrial buildings, and landmark residential communities across Tamil Nadu.",
+      "Our growth is built on a simple foundation: doing what is right for the client, every single time."
+    ],
+    "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    "imageAlt": "Saanidhya Builders story — construction in Coimbatore"
+  },
+  "values": [
+    {
+      "icon": "Award",
+      "title": "Quality First",
+      "desc": "Uncompromising quality at every stage of construction."
+    },
+    {
+      "icon": "Heart",
+      "title": "Client Focus",
+      "desc": "Your satisfaction drives every decision we make."
+    },
+    {
+      "icon": "Target",
+      "title": "Precision",
+      "desc": "Meticulous attention to detail in design and execution."
+    },
+    {
+      "icon": "Users",
+      "title": "Team Spirit",
+      "desc": "A united team of experts working toward your vision."
+    }
+  ],
+  "mission": "To deliver exceptional construction experiences that transform our clients' visions into reality, built on a foundation of quality, transparency, and trust.",
+  "vision": "To be the most trusted name in construction across Tamil Nadu — known for our integrity, innovation, and the lasting quality of every structure we build.",
+  "heroImage": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80",
+  "previewImages": {
+    "main": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    "accent": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80",
+    "mainAlt": "Saanidhya Builders team and architecture Coimbatore",
+    "accentAlt": "Construction excellence Coimbatore"
+  }
+}

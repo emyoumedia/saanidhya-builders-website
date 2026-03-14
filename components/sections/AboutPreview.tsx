@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
+import company from '@/data/company.json'
+import aboutData from '@/data/about.json'
 
 export default function AboutPreview() {
   return (
@@ -13,10 +15,9 @@ export default function AboutPreview() {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden" style={{ height: '520px' }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
-                  alt="Saanidhya Builders team and architecture"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  src={aboutData.previewImages.main}
+                  alt={aboutData.previewImages.mainAlt}
+                  fill sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-navy/10 to-transparent" />
@@ -24,21 +25,20 @@ export default function AboutPreview() {
               {/* Accent box */}
               <div className="absolute -top-6 -right-6 w-48 h-48 rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80"
-                  alt="Construction excellence"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  src={aboutData.previewImages.accent}
+                  alt={aboutData.previewImages.accentAlt}
+                  fill sizes="200px"
                   className="object-cover"
                 />
               </div>
               {/* Badge */}
               <div className="absolute -bottom-4 left-8 bg-navy rounded-2xl p-5 shadow-2xl flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white font-playfair font-bold text-lg">
-                  15
+                  {parseInt(company.stats.yearsExperience)}
                 </div>
                 <div>
                   <div className="font-playfair font-bold text-white text-sm">Years of</div>
-                  <div className="font-montserrat text-xs text-orange">Excellence</div>
+                  <div className="font-montserrat text-orange text-xs uppercase tracking-wider">Excellence</div>
                 </div>
               </div>
             </div>
@@ -47,40 +47,29 @@ export default function AboutPreview() {
           {/* Content */}
           <AnimatedSection direction="left">
             <span className="inline-block font-montserrat text-sm font-semibold text-orange uppercase tracking-widest mb-4">
-              About Saanidhya Builders
+              About Us
             </span>
-            <h2 className="section-title mb-6">
-              Coimbatore's Premier{' '}
-              <span className="gradient-text">Construction</span>{' '}
-              Partner
-            </h2>
-            <p className="font-montserrat text-navy/60 leading-relaxed mb-5">
-              Founded with a vision to redefine construction standards in Tamil Nadu, Saanidhya
-              Builders has grown into one of Coimbatore's most trusted names in residential and
-              commercial construction.
-            </p>
-            <p className="font-montserrat text-navy/60 leading-relaxed mb-8">
-              Our team of 200+ professionals — architects, civil engineers, interior designers,
-              and skilled craftsmen — work in harmony to deliver projects that stand the test of
-              time. We believe every structure tells a story, and we make sure yours is exceptional.
-            </p>
+            <h2 className="section-title mb-6">{aboutData.story.heading}</h2>
+            {aboutData.story.paragraphs.map((p, i) => (
+              <p key={i} className="font-montserrat text-navy/60 leading-relaxed mb-4">{p}</p>
+            ))}
 
-            <div className="grid grid-cols-3 gap-6 mb-10 py-8 border-y border-navy/10">
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-6 py-6 border-y border-navy/8 mb-8">
               {[
-                { value: '500+', label: 'Projects' },
-                { value: '1200+', label: 'Happy Clients' },
-                { value: '200+', label: 'Team Members' },
-              ].map(({ value, label }) => (
-                <div key={label} className="text-center">
-                  <div className="font-playfair font-bold text-3xl gradient-text">{value}</div>
-                  <div className="font-montserrat text-xs text-navy/50 mt-1">{label}</div>
+                { value: company.stats.projectsCompleted, label: 'Projects' },
+                { value: company.stats.happyClients,      label: 'Clients' },
+                { value: company.stats.googleRating + '★', label: 'Rating' },
+              ].map((s) => (
+                <div key={s.label} className="text-center">
+                  <div className="font-playfair font-bold text-navy text-2xl">{s.value}</div>
+                  <div className="font-montserrat text-navy/50 text-xs uppercase tracking-wider mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
 
             <Link href="/about" className="btn-primary">
-              Learn More About Us
-              <ArrowRight size={18} />
+              Learn More About Us <ArrowRight size={16} />
             </Link>
           </AnimatedSection>
         </div>

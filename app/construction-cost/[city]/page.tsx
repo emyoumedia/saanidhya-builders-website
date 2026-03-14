@@ -94,7 +94,7 @@ export default function ConstructionCostPage({ params }: Props) {
                   <Link href="/contact" className="btn-primary text-sm">
                     Get Free Estimate <ArrowRight size={15} />
                   </Link>
-                  <a href="tel:+919876543210" className="btn-secondary text-sm">
+                  <a href={`tel:${company.contact.phoneRaw}`} className="btn-secondary text-sm">
                     <Phone size={15} /> Call Now
                   </a>
                 </div>
@@ -313,10 +313,10 @@ export default function ConstructionCostPage({ params }: Props) {
                   rounded-full hover:bg-cream transition-colors inline-flex items-center gap-2">
                 Get Free Consultation <ArrowRight size={15} />
               </Link>
-              <a href="tel:+919876543210"
+              <a href={`tel:${company.contact.phoneRaw}`}
                 className="border-2 border-white text-white font-montserrat font-semibold text-sm
                   px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-flex items-center gap-2">
-                <Phone size={15} /> +91 98765 43210
+                <Phone size={15} /> {company.contact.phone}
               </a>
             </div>
           </div>

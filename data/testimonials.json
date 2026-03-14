@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Arjun Krishnamurthy",
+    "area": "Saibaba Colony",
+    "city": "Coimbatore",
+    "projectType": "Luxury Villa",
+    "rating": 5,
+    "text": "Saanidhya Builders transformed our plot into the most beautiful home in our neighbourhood. The attention to detail was extraordinary — from the Vastu-compliant layout to the premium Italian marble flooring. Completed on time, within budget.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+    "imageAlt": "Arjun Krishnamurthy - Saanidhya Builders client Coimbatore",
+    "projectValue": "₹1.8 Cr",
+    "completedYear": "2025"
+  },
+  {
+    "id": 2,
+    "name": "Priya Subramaniam",
+    "area": "Peelamedu",
+    "city": "Coimbatore",
+    "projectType": "3BHK Independent House",
+    "rating": 5,
+    "text": "From the very first consultation to the final handover, the Saanidhya team was professional, transparent, and genuinely caring. They treated our home as if it were their own. The quality of construction is outstanding.",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
+    "imageAlt": "Priya Subramaniam - happy client Saanidhya Builders",
+    "projectValue": "₹65 L",
+    "completedYear": "2024"
+  },
+  {
+    "id": 3,
+    "name": "Venkatesh Raman",
+    "area": "RS Puram",
+    "city": "Coimbatore",
+    "projectType": "Commercial Office",
+    "rating": 5,
+    "text": "We needed our office building ready for a strict deadline. Saanidhya not only met the deadline but the quality surpassed what we envisioned. Their project management is top-notch — real-time updates every week.",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
+    "imageAlt": "Venkatesh Raman - commercial construction client Coimbatore",
+    "projectValue": "₹3.2 Cr",
+    "completedYear": "2025"
+  },
+  {
+    "id": 4,
+    "name": "Meenakshi Iyer",
+    "area": "Ganapathy",
+    "city": "Coimbatore",
+    "projectType": "Home Renovation",
+    "rating": 5,
+    "text": "Our 20-year-old house now looks brand new. The renovation team was meticulous, clean, and incredibly skilled. They suggested ideas I hadn't thought of that made the space so much more functional.",
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
+    "imageAlt": "Meenakshi Iyer - renovation client Saanidhya Builders",
+    "projectValue": "₹18 L",
+    "completedYear": "2024"
+  },
+  {
+    "id": 5,
+    "name": "Karthik Selvam",
+    "area": "Singanallur",
+    "city": "Coimbatore",
+    "projectType": "Turnkey Villa",
+    "rating": 5,
+    "text": "Full turnkey project — they handled everything from approvals to interior design. I was working overseas and they managed every detail with zero hassle for me. Walked into a fully furnished home on my return.",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+    "imageAlt": "Karthik Selvam - turnkey construction client Saanidhya Builders",
+    "projectValue": "₹2.4 Cr",
+    "completedYear": "2025"
+  },
+  {
+    "id": 6,
+    "name": "Deepa Natarajan",
+    "area": "Vadavalli",
+    "city": "Coimbatore",
+    "projectType": "2BHK Apartment Block",
+    "rating": 5,
+    "text": "Built 4 apartment units with Saanidhya. Excellent structural quality, all RERA-compliant documentation handled seamlessly, and great coordination between the construction and interior teams.",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
+    "imageAlt": "Deepa Natarajan - apartment construction client Coimbatore",
+    "projectValue": "₹1.1 Cr",
+    "completedYear": "2023"
+  }
+]

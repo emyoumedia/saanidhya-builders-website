@@ -6,17 +6,8 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import nav from '@/data/nav.json'
 
-const navLinks = [
-  { href: '/',             label: 'Home' },
-  { href: '/about',        label: 'About' },
-  { href: '/services',     label: 'Services' },
-  { href: '/projects',     label: 'Projects' },
-  { href: '/process',      label: 'Process' },
-  { href: '/blog',         label: 'Blog' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/contact',      label: 'Contact' },
-]
 
 /*
   Pages whose hero is dark navy — navbar starts transparent and blends in.
@@ -85,15 +76,14 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0"
             aria-label="Saanidhya Builders home">
-            <div className="relative flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <div className="flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="/logo/logo.png"
                 alt="Saanidhya Builders logo"
-                width={48}
-                height={48}
-                className="h-11 w-auto object-contain"
+                width={600}
+                height={600}
                 priority
-                style={{ height: '44px', width: 'auto' }}
+                style={{ height: '44px', width: '44px', objectFit: 'contain' }}
               />
             </div>
             <div>
@@ -106,7 +96,7 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex items-center gap-0.5" role="list">
-            {navLinks.map((link) => {
+            {nav.mainNav.map((link) => {
               const isActive = link.href === '/'
                 ? pathname === '/'
                 : pathname === link.href || pathname.startsWith(link.href + '/')
@@ -164,7 +154,7 @@ export default function Navbar() {
             >
               <div className="container mx-auto px-4 py-5">
                 <ul className="flex flex-col gap-1" role="list">
-                  {navLinks.map((link, i) => {
+                  {nav.mainNav.map((link, i) => {
                     const isActive = link.href === '/'
                       ? pathname === '/'
                       : pathname === link.href || pathname.startsWith(link.href + '/')

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import company from '@/data/company.json'
 import { ArrowRight, Phone } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
@@ -34,11 +35,11 @@ export default function CTASection() {
               <ArrowRight size={18} />
             </Link>
             <a
-              href="tel:+919876543210"
+              href={`tel:${company.contact.phoneRaw}`}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-montserrat font-bold text-sm hover:bg-white/10 hover:scale-105 transition-all duration-300"
             >
               <Phone size={16} />
-              +91 98765 43210
+              {company.contact.phone}
             </a>
           </div>
         </AnimatedSection>

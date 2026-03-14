@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 interface Props { author: string; date: string; readingTime: string }
 

@@ -1,0 +1,180 @@
+{
+  "buildersCoimbatore": {
+    "highlights": [
+      {
+        "icon": "Clock",
+        "stat": "yearsExperience",
+        "label": "Years Experience",
+        "desc": "Established in 2009, we have deep roots in Coimbatore's construction landscape."
+      },
+      {
+        "icon": "ShieldCheck",
+        "stat": "projectsCompleted",
+        "label": "Projects Delivered",
+        "desc": "From modest homes to large commercial complexes \u2014 every project delivered on time."
+      },
+      {
+        "icon": "Users",
+        "stat": "happyClients",
+        "label": "Happy Clients",
+        "desc": "Referrals and repeat clients account for over 60% of our new projects."
+      },
+      {
+        "icon": "Award",
+        "stat": "googleRating",
+        "label": "Google Rating",
+        "desc": "Verified rating across genuine client reviews on Google."
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Karthik R.",
+        "area": "Saibaba Colony",
+        "rating": 5,
+        "text": "Saanidhya built our dream villa in 14 months. Quality is outstanding \u2014 better than what we expected at the price point. Highly recommend!"
+      },
+      {
+        "name": "Priya S.",
+        "area": "Peelamedu",
+        "rating": 5,
+        "text": "Professional team, transparent billing, and zero surprises. Our office building was handed over exactly on the date they promised."
+      },
+      {
+        "name": "Venkat M.",
+        "area": "RS Puram",
+        "rating": 5,
+        "text": "They handled everything from approvals to interior work. We just had to show up for the keys. Excellent turnkey experience."
+      }
+    ]
+  },
+  "commercialConstruction": {
+    "buildingTypes": [
+      {
+        "title": "Office Buildings",
+        "desc": "Modern office complexes with open floor plans, IT infrastructure, energy-efficient systems, and LEED certification options.",
+        "img": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80"
+      },
+      {
+        "title": "Retail & Showrooms",
+        "desc": "High-impact retail spaces designed to attract footfall, with optimal product display, lighting, and customer flow.",
+        "img": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80"
+      },
+      {
+        "title": "Warehouses & Industrial",
+        "desc": "Functional, structurally robust warehouses and manufacturing facilities built to industrial specifications.",
+        "img": "https://images.unsplash.com/photo-1553830591-d8632a99e6ff?w=600&q=80"
+      }
+    ],
+    "features": [
+      "Dedicated project manager from day one",
+      "Compliant with NBC, BIS, and local DTCP regulations",
+      "LEED-certified construction options available",
+      "Smart building systems integration",
+      "Fire safety and electrical compliance",
+      "Transparent progress reporting",
+      "On-time delivery guarantee",
+      "Post-completion maintenance support"
+    ]
+  },
+  "constructionCompany": {
+    "services": [
+      {
+        "icon": "Home",
+        "title": "Residential Construction",
+        "slug": "/residential-construction-coimbatore"
+      },
+      {
+        "icon": "Building2",
+        "title": "Commercial Construction",
+        "slug": "/commercial-construction-coimbatore"
+      },
+      {
+        "icon": "Key",
+        "title": "Turnkey Projects",
+        "slug": "/services"
+      },
+      {
+        "icon": "Palette",
+        "title": "Architectural Design",
+        "slug": "/services"
+      },
+      {
+        "icon": "Hammer",
+        "title": "Renovation",
+        "slug": "/services"
+      },
+      {
+        "icon": "Sofa",
+        "title": "Interior Design",
+        "slug": "/services"
+      }
+    ],
+    "areas": [
+      "Saibaba Colony",
+      "RS Puram",
+      "Peelamedu",
+      "Saravanampatti",
+      "Ganapathy",
+      "Singanallur",
+      "Ramanathapuram",
+      "Vadavalli"
+    ],
+    "faq": [
+      {
+        "question": "Which is the best construction company in Coimbatore?",
+        "answer": "Saanidhya Builders is consistently rated among the top construction companies in Coimbatore, with 15+ years of experience, 500+ completed projects, and a 4.9-star client rating. We specialise in residential and commercial construction, architectural design, and turnkey projects."
+      },
+      {
+        "question": "How much does it cost to build a house in Coimbatore?",
+        "answer": "House construction costs in Coimbatore range from \u20b91,800 to \u20b93,500 per sq.ft depending on specification. Basic: \u20b91,800\u20132,000/sq.ft. Standard: \u20b92,200\u20132,600/sq.ft. Premium: \u20b93,000\u20133,500+/sq.ft. Contact us for a detailed free estimate."
+      },
+      {
+        "question": "Is Saanidhya Builders RERA registered?",
+        "answer": "Yes. Saanidhya Builders is RERA registered and complies with all Tamil Nadu RERA regulations. We are also ISO certified and bank-approved, giving you complete peace of mind on every project."
+      }
+    ]
+  },
+  "residentialConstruction": {
+    "projectTypes": [
+      {
+        "title": "Independent Houses",
+        "desc": "Custom-built single and multi-storey homes with personalised layouts, premium materials, and Vastu-compliant designs.",
+        "img": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80"
+      },
+      {
+        "title": "Luxury Villas",
+        "desc": "Bespoke villas with premium finishes, private gardens, smart home systems, and optional swimming pools.",
+        "img": "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80"
+      },
+      {
+        "title": "Apartments & Flats",
+        "desc": "Efficient, modern apartments and 2BHK/3BHK residential units optimised for urban living and investment.",
+        "img": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80"
+      }
+    ],
+    "features": [
+      "Vastu-compliant floor plans",
+      "5-year structural warranty",
+      "Bank-approved construction",
+      "RERA registered projects",
+      "Premium material sourcing",
+      "All permits and approvals handled",
+      "Fixed-cost contracts \u2014 no hidden charges",
+      "Regular photographic progress updates"
+    ],
+    "faq": [
+      {
+        "question": "How much does residential construction cost in Coimbatore?",
+        "answer": "Residential construction in Coimbatore costs between \u20b91,800 to \u20b93,500 per sq.ft. Basic specification: \u20b91,800\u20132,000/sq.ft. Standard: \u20b92,200\u20132,600/sq.ft. Premium/luxury: \u20b93,000\u20133,500+/sq.ft. Get a detailed free estimate from Saanidhya Builders."
+      },
+      {
+        "question": "How long does it take to build a house in Coimbatore?",
+        "answer": "A typical 1,500\u20132,000 sq.ft residential home in Coimbatore takes 12\u201316 months to build. Larger villas may take 18\u201324 months. Saanidhya Builders provides a detailed construction schedule before starting and sends regular progress updates."
+      },
+      {
+        "question": "Do you build Vastu-compliant homes in Coimbatore?",
+        "answer": "Yes. Saanidhya Builders designs all homes as per Vastu Shastra principles by default. Our architects are trained in Vastu-compliant layouts. We can also modify any floor plan to meet specific Vastu requirements."
+      }
+    ]
+  }
+}

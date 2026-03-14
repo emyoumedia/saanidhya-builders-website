@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import HeroSection from '@/components/sections/HeroSection'
+import company from '@/data/company.json'
 
 // Below-fold sections: lazy load to keep initial JS bundle tiny
 const AboutPreview    = dynamic(() => import('@/components/sections/AboutPreview'))
@@ -12,10 +13,10 @@ const Testimonials    = dynamic(() => import('@/components/sections/Testimonials
 const CTASection      = dynamic(() => import('@/components/sections/CTASection'))
 
 export const metadata: Metadata = {
-  title: 'Saanidhya Builders | Premium Construction Company in Coimbatore',
-  description:
-    'Saanidhya Builders – Building Dreams with Quality and Trust. Leading construction company in Coimbatore offering residential construction, commercial construction, architectural design and turnkey projects in Tamil Nadu.',
-  alternates: { canonical: 'https://www.saanidhyabuilders.com' },
+  title: company.seo.metaTitle,
+  description: company.seo.metaDescription,
+  keywords: company.seo.keywords,
+  alternates: { canonical: company.website },
 }
 
 export default function HomePage() {

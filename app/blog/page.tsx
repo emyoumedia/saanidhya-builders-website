@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getAllPosts, getAllCategories, getAllTags, paginatePosts, getFeaturedPosts } from '@/lib/blog'
+import company from '@/data/company.json'
 import BlogGrid    from '@/components/blog/BlogGrid'
 import BlogHeader  from '@/components/blog/BlogHeader'
 import BlogSidebar from '@/components/blog/BlogSidebar'
@@ -9,9 +10,9 @@ import BlogCard    from '@/components/blog/BlogCard'
 import Pagination  from '@/components/blog/Pagination'
 
 export const metadata: Metadata = {
-  title: 'Construction Blog | Tips, Guides & Insights | Saanidhya Builders',
-  description: 'Expert construction tips, cost guides, design ideas, and real estate insights for homebuilders in Coimbatore and Tamil Nadu. Updated regularly by Saanidhya Builders.',
-  alternates: { canonical: 'https://www.saanidhyabuilders.com/blog' },
+  title: `Construction Blog | Tips, Guides & Insights | ${company.name}`,
+  description: `Expert construction tips, cost guides, design ideas, and real estate insights for homebuilders in ${company.serviceArea.city} and Tamil Nadu. Updated regularly by ${company.name}.`,
+  alternates: { canonical: `${company.website}/blog` },
 }
 
 interface Props {

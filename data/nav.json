@@ -1,0 +1,48 @@
+{
+  "mainNav": [
+    { "href": "/",             "label": "Home" },
+    { "href": "/about",        "label": "About" },
+    { "href": "/services",     "label": "Services" },
+    { "href": "/projects",     "label": "Projects" },
+    { "href": "/process",      "label": "Process" },
+    { "href": "/blog",         "label": "Blog" },
+    { "href": "/testimonials", "label": "Testimonials" },
+    { "href": "/contact",      "label": "Contact" }
+  ],
+  "footerQuickLinks": [
+    { "href": "/",             "label": "Home" },
+    { "href": "/about",        "label": "About Us" },
+    { "href": "/services",     "label": "Services" },
+    { "href": "/projects",     "label": "Projects" },
+    { "href": "/process",      "label": "Our Process" },
+    { "href": "/testimonials", "label": "Testimonials" },
+    { "href": "/blog",         "label": "Blog" },
+    { "href": "/faq",          "label": "FAQ" },
+    { "href": "/contact",      "label": "Contact" }
+  ],
+  "footerResources": [
+    { "href": "/construction-company-coimbatore",     "label": "Construction Company Coimbatore" },
+    { "href": "/builders-coimbatore",                 "label": "Builders in Coimbatore" },
+    { "href": "/residential-construction-coimbatore", "label": "Residential Construction" },
+    { "href": "/blog",                                "label": "Construction Blog" },
+    { "href": "/blog/category/construction",          "label": "Construction Guides" },
+    { "href": "/blog/category/interior-design",       "label": "Interior Design Tips" },
+    { "href": "/blog/category/legal",                 "label": "Permits & Approvals" },
+    { "href": "/construction-cost/coimbatore",        "label": "Cost in Coimbatore" },
+    { "href": "/construction-cost/chennai",           "label": "Cost in Chennai" },
+    { "href": "/construction-cost/bangalore",         "label": "Cost in Bangalore" }
+  ],
+  "footerLegal": [
+    { "href": "/privacy",      "label": "Privacy Policy" },
+    { "href": "/terms",        "label": "Terms of Service" },
+    { "href": "/sitemap.xml",  "label": "Sitemap" }
+  ],
+  "footerServices": [
+    { "href": "/services", "label": "Residential Construction" },
+    { "href": "/services", "label": "Commercial Construction" },
+    { "href": "/services", "label": "Architectural Design" },
+    { "href": "/services", "label": "Turnkey Construction" },
+    { "href": "/services", "label": "Interior Design" },
+    { "href": "/services", "label": "Renovation & Remodeling" }
+  ]
+}
