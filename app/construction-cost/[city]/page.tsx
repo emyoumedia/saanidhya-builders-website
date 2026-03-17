@@ -2,6 +2,7 @@ import type { Metadata }  from 'next'
 import { notFound }       from 'next/navigation'
 import Link               from 'next/link'
 import { cities, getCityBySlug } from '@/data/cities'
+import company from '@/data/company.json'
 import { constructionCostMeta, faqJsonLd, cap, formatDate } from '@/lib/seo'
 import { CheckCircle, Phone, ArrowRight, MapPin, TrendingUp, Home, Building2,
          Star, MessageSquare, Clock } from 'lucide-react'

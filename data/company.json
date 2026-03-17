@@ -2,7 +2,7 @@
   "name": "Saanidhya Builders",
   "tagline": "Building Dreams with Quality & Trust",
   "businessType": "Construction Company",
-  "founded": "2009",
+  "founded": "2023",
   "description": "Saanidhya Builders is a construction company serving Coimbatore specializing in residential and commercial construction, turnkey construction projects, and building design. We provide complete building solutions including architectural planning, house construction, villa construction, renovation, and interior design services with a focus on quality construction, reliability, and timely project delivery.",
   "serviceArea": {
     "city": "Coimbatore",
@@ -12,12 +12,12 @@
     "note": "Service Area Business \u2014 we serve clients across Coimbatore and Tamil Nadu. No public office address."
   },
   "contact": {
-    "phone": "+91 XXXXXXXXXX",
-    "phoneRaw": "91XXXXXXXXXX",
-    "phoneDisplay": "+91 XXXXXXXXXX",
+    "phone": "+91 7448811611",
+    "phoneRaw": "917448811611",
+    "phoneDisplay": "+91 7448811611",
     "email": "info@saanidhyabuilders.com",
-    "whatsapp": "91XXXXXXXXXX",
-    "whatsappLink": "https://wa.me/91XXXXXXXXXX?text=Hello%2C%20I%20would%20like%20to%20discuss%20my%20construction%20project%20with%20Saanidhya%20Builders",
+    "whatsapp": "917448811611",
+    "whatsappLink": "https://wa.me/917448811611?text=Hello%2C%20I%20would%20like%20to%20discuss%20my%20construction%20project%20with%20Saanidhya%20Builders",
     "whatsappText": "Hello, I would like to discuss my construction project with Saanidhya Builders"
   },
   "hours": {
@@ -32,7 +32,7 @@
   },
   "stats": {
     "projectsCompleted": "500+",
-    "yearsExperience": "15+",
+    "yearsExperience": "3+",
     "happyClients": "1200+",
     "googleRating": "4.9",
     "reviewCount": "214",
