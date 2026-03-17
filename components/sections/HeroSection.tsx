@@ -97,16 +97,9 @@ export default function HeroSection() {
                   style={{ fontSize: 'clamp(1.9rem, 5.5vw, 3.8rem)' }}
                 >
                   Build Your{' '}
-                  <span style={{
-                    backgroundImage: 'linear-gradient(135deg,#7A2EFF,#FF6A1A)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    // ✅ Standard properties for Firefox / non-webkit browsers
-                    backgroundClip: 'text',
-                    color: 'transparent',
-                  }}>
-                    Dream
-                  </span>
+              <span className="gradient-text">
+                Dream
+              </span>
                   {' '}with <span className="whitespace-nowrap">{company.name}</span>
                 </m.h1>
 
