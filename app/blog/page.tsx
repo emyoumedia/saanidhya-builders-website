@@ -16,13 +16,15 @@ export const metadata: Metadata = {
 }
 
 interface Props {
-  searchParams?: { page?: string; q?: string; category?: string }
+  searchParams: Promise<{ page?: string; q?: string; category?: string }>
 }
 
-export default function BlogPage({ searchParams }: Props) {
-  const page     = Number(searchParams?.page || 1)
-  const query    = searchParams?.q?.toLowerCase() || ''
-  const catFilter= searchParams?.category || ''
+export default async function BlogPage({ searchParams }: Props) {
+  const params = await searchParams
+
+  const page      = Number(params?.page || 1)
+  const query     = params?.q?.toLowerCase() || ''
+  const catFilter = params?.category || ''
 
   let posts = getAllPosts()
 
@@ -41,12 +43,12 @@ export default function BlogPage({ searchParams }: Props) {
   }
 
   const { items, totalPages } = paginatePosts(posts, page, 9)
-  const featured    = getFeaturedPosts(2)
-  const categories  = getAllCategories()
-  const tags        = getAllTags()
-  const allPosts    = getAllPosts()
-  const recentPosts = allPosts.slice(0, 4)
-  const popularPosts= allPosts.filter((p) => p.featured).slice(0, 3)
+  const featured     = getFeaturedPosts(2)
+  const categories   = getAllCategories()
+  const tags         = getAllTags()
+  const allPosts     = getAllPosts()
+  const recentPosts  = allPosts.slice(0, 4)
+  const popularPosts = allPosts.filter((p) => p.featured).slice(0, 3)
 
   // Category counts
   const categoryCounts: Record<string,number> = {}
