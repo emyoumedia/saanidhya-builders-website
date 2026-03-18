@@ -1,80 +1,73 @@
-'use client'
-
 import { MessageSquare, FileText, Pencil, HardHat, Key } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import processData from '@/data/process.json'
+import company from '@/data/company.json'
 
 const iconMap: Record<string, React.ElementType> = {
   MessageSquare, FileText, Pencil, HardHat, Key,
 }
-const stepColors = ['#7A2EFF','#9A2EE8','#BF4ECF','#E06A1A','#FF6A1A']
+
+const STEP_COLORS = ['#7A2EFF', '#9A2EE8', '#BF4ECF', '#E06A1A', '#FF6A1A']
+
+type ProcessStep = {
+  step: string; title: string; icon: string
+  duration: string; description: string; deliverables: string[]
+}
 
 export default function ProcessTimeline() {
+  const { process } = company.copy
+
   return (
-    <section className="py-24 bg-cream" id="process">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-20 bg-cream" id="process" aria-labelledby="process-heading">
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12">
+
         <AnimatedSection>
-          <div className="text-center mb-14">
-            <span className="inline-block font-montserrat text-sm font-semibold text-orange uppercase tracking-widest mb-4">
-              How We Work
+          <div className="text-center mb-12">
+            <span className="inline-block font-montserrat text-xs font-bold text-orange uppercase tracking-[0.18em] mb-4">
+              {process.badge}
             </span>
-            <h2 className="section-title mb-4">Our Construction Process</h2>
-            <p className="font-montserrat text-navy/55 max-w-2xl mx-auto leading-relaxed">
-              A transparent, milestone-based process — so you always know exactly where
-              your project stands.
-            </p>
+            <h2 id="process-heading"
+              className="font-playfair font-bold text-navy leading-[1.2]"
+              style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)' }}>
+              {process.heading}
+            </h2>
           </div>
         </AnimatedSection>
 
         <div className="relative">
-          {/* Connector line — desktop only */}
-          <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-purple/30 via-orange/50 to-orange/30" />
+          <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px"
+            style={{ background: 'linear-gradient(to right, rgba(122,46,255,0.25), rgba(255,106,26,0.5), rgba(255,106,26,0.25))' }}
+            aria-hidden="true" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {processData.map((step, i) => {
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            {(processData as unknown as ProcessStep[]).map((step, i) => {
               const Icon = iconMap[step.icon] || Key
-              const color = stepColors[i] || '#FF6A1A'
+              const color = STEP_COLORS[i] ?? '#FF6A1A'
               return (
-                <AnimatedSection key={step.step} delay={i * 0.08}>
-                  <div className="relative flex flex-col items-center text-center group">
-                    {/* Step circle */}
-                    <div className="relative w-20 h-20 rounded-full flex items-center justify-center mb-5 z-10
-                      border-2 border-white shadow-xl transition-transform duration-300 group-hover:scale-110"
+                <AnimatedSection key={step.step} delay={i * 0.07}>
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="relative w-20 h-20 rounded-full flex items-center justify-center mb-4 z-10 border-2 border-white shadow-lg transition-transform duration-300 group-hover:scale-105"
                       style={{ background: color }}>
-                      <Icon size={28} className="text-white" />
-                      <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white border-2
-                        flex items-center justify-center font-montserrat font-bold text-xs"
+                      <Icon size={26} className="text-white" />
+                      <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border-2 flex items-center justify-center font-montserrat font-bold text-xs"
                         style={{ color, borderColor: color }}>
                         {step.step}
                       </span>
                     </div>
-
-                    <h3 className="font-playfair font-bold text-navy text-lg mb-2">{step.title}</h3>
-                    <p className="font-montserrat text-navy/55 text-sm leading-relaxed mb-3">
-                      {step.description}
-                    </p>
+                    <h3 className="font-montserrat font-semibold text-navy text-sm mb-1.5 leading-snug">
+                      {step.title}
+                    </h3>
                     <span className="font-montserrat text-xs font-semibold px-3 py-1 rounded-full"
                       style={{ color, background: `${color}18` }}>
                       {step.duration}
                     </span>
-
-                    {/* Deliverables tooltip on hover */}
-                    <div className="mt-3 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ul className="space-y-1">
-                        {step.deliverables.map((d) => (
-                          <li key={d} className="font-montserrat text-xs text-navy/50 flex items-center gap-1.5 justify-center">
-                            <span className="w-1 h-1 rounded-full bg-orange flex-shrink-0" />
-                            {d}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
                 </AnimatedSection>
               )
             })}
           </div>
         </div>
+
       </div>
     </section>
   )

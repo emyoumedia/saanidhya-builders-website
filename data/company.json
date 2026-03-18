@@ -1,48 +1,78 @@
 {
   "name": "Saanidhya Builders",
-  "tagline": "Building Dreams with Quality & Trust",
+  "tagline": "Expert Planning. Strong Execution. Complete Transparency.",
   "businessType": "Construction Company",
   "founded": "2023",
-  "description": "Saanidhya Builders is a construction company serving Coimbatore specializing in residential and commercial construction, turnkey construction projects, and building design. We provide complete building solutions including architectural planning, house construction, villa construction, renovation, and interior design services with a focus on quality construction, reliability, and timely project delivery.",
+  "description": "Saanidhya Builders is a professionally managed construction company delivering high-quality residential and commercial projects with a strong focus on trust, transparency, and timely completion.",
+  "shortDescription": "Led by Sandeep Kumar (Business Head) and Sankar (Execution Head), we deliver high-quality construction with expert planning, strong execution, and complete transparency.",
   "serviceArea": {
     "city": "Coimbatore",
     "state": "Tamil Nadu",
     "country": "India",
     "display": "Coimbatore, Tamil Nadu, India",
-    "note": "Service Area Business \u2014 we serve clients across Coimbatore and Tamil Nadu. No public office address."
+    "note": "Service Area Business — we serve clients across Coimbatore and Tamil Nadu. No public office address."
   },
   "contact": {
-    "phone": "+91 7448811611",
+    "phone": "+91 74488 11611",
     "phoneRaw": "917448811611",
-    "phoneDisplay": "+91 7448811611",
+    "phoneDisplay": "+91 74488 11611",
     "email": "info@saanidhyabuilders.com",
     "whatsapp": "917448811611",
     "whatsappLink": "https://wa.me/917448811611?text=Hello%2C%20I%20would%20like%20to%20discuss%20my%20construction%20project%20with%20Saanidhya%20Builders",
-    "whatsappText": "Hello, I would like to discuss my construction project with Saanidhya Builders"
+    "whatsappText": "Hello, I would like to discuss my construction project with Saanidhya Builders",
+    "googleReviewLink": "https://g.page/r/REPLACE_WITH_YOUR_PLACE_ID/review"
   },
   "hours": {
-    "weekdays": "Monday \u2013 Saturday",
-    "time": "09:00 AM \u2013 06:00 PM",
+    "weekdays": "Monday – Saturday",
+    "time": "09:00 AM – 06:00 PM",
     "sunday": "Closed",
     "timezone": "IST",
-    "full": "Mon\u2013Sat: 09:00 AM \u2013 06:00 PM | Sunday: Closed",
+    "full": "Mon–Sat: 09:00 AM – 06:00 PM | Sunday: Closed",
     "opens": "09:00",
     "closes": "18:00",
     "note": "We respond to online enquiries within 2 hours during business hours"
   },
   "stats": {
-    "projectsCompleted": "500+",
-    "yearsExperience": "3+",
-    "happyClients": "1200+",
-    "googleRating": "4.9",
-    "reviewCount": "214",
-    "teamSize": "200+"
+    "projectsCompleted": "9+",
+    "projectsOngoing": "3",
+    "yearsExperience": "2+",
+    "happyClients": "9+",
+    "googleRating": null,
+    "reviewCount": null,
+    "teamSize": "2"
+  },
+  "leadership": {
+    "business": {
+      "name": "Sandeep Kumar",
+      "title": "Business Head & Client Relations",
+      "responsibilities": [
+        "Client acquisition",
+        "Client relationship & communication",
+        "Pricing, quotations & deal closing",
+        "Legal documentation & agreements",
+        "Project planning & coordination",
+        "Branding & business growth"
+      ]
+    },
+    "execution": {
+      "name": "Sankar",
+      "title": "Execution Head & Site Operations",
+      "responsibilities": [
+        "Site supervision",
+        "Engineering & technical work",
+        "Labor management",
+        "Material handling & quality",
+        "Quality control",
+        "On-time project execution"
+      ]
+    }
   },
   "social": {
     "facebook": "https://www.facebook.com/saanidhyabuilders",
     "instagram": "https://www.instagram.com/saanidhyabuilders",
     "linkedin": "https://www.linkedin.com/company/saanidhyabuilders",
-    "youtube": "https://www.youtube.com/@saanidhyabuilders"
+    "youtube": "https://www.youtube.com/@saanidhyabuilders",
+    "gmbLink": "https://g.page/r/REPLACE_WITH_YOUR_PLACE_ID"
   },
   "website": "https://www.saanidhyabuilders.com",
   "certifications": [
@@ -55,12 +85,68 @@
     "plumbingElectrical": "1 year",
     "waterproofing": "3 years"
   },
+  "copy": {
+    "hero": {
+      "badge": "Trusted Builders",
+      "headline": "Build Your Dream Home in",
+      "ctaPrimary": "Get Free Consultation",
+      "ctaSecondary": "WhatsApp Us"
+    },
+    "about": {
+      "badge": "About Us",
+      "ctaLabel": "Our Story"
+    },
+    "services": {
+      "badge": "Our Services",
+      "heading": "Complete Construction Solutions",
+      "ctaLabel": "View All Services"
+    },
+    "projects": {
+      "badge": "Our Work",
+      "heading": "Featured Projects",
+      "ctaLabel": "View All"
+    },
+    "whyUs": {
+      "badge": "Why Choose Us",
+      "headingPrefix": "The ",
+      "headingSuffix": " Difference"
+    },
+    "process": {
+      "badge": "How We Work",
+      "heading": "Our Construction Process"
+    },
+    "trust": {
+      "badge": "Why Trust Us",
+      "heading": "Built on Results, Not Just Words",
+      "subheading": "We're a growing company with a strong track record. Every project we've taken on has been delivered with quality and care.",
+      "ongoingLabel": "projects ongoing",
+      "deliveryValue": "100%",
+      "deliveryLabel": "On-time Delivery",
+      "deliverySub": "All completed projects",
+      "locationSub": "Across",
+      "ctaCard": {
+        "heading": "We're just getting started online",
+        "body": "Our work has been word-of-mouth so far. If you've worked with us, your review would mean the world to us.",
+        "btnLabel": "Leave Us a Review"
+      },
+      "projectsRedirect": "Want proof instead?",
+      "projectsLink": "See our completed projects →"
+    },
+    "cta": {
+      "badge": "Get Started Today",
+      "heading": "Ready to Build Your",
+      "headingItalic": "Dream Project?",
+      "subheading": "Free consultation. No commitment. Let's bring your vision to life.",
+      "ctaPrimary": "Get Free Consultation",
+      "ctaSecondary": "WhatsApp Us"
+    }
+  },
   "legal": {
     "lastPolicyUpdate": "March 11, 2026"
   },
   "seo": {
     "metaTitle": "Saanidhya Builders | Construction Company in Coimbatore",
-    "metaDescription": "Saanidhya Builders \u2013 leading construction company in Coimbatore. Residential construction, commercial construction, turnkey projects, villa construction, renovation & interior design across Tamil Nadu.",
+    "metaDescription": "Saanidhya Builders – trusted construction company in Coimbatore. Led by Sandeep Kumar & Sankar. Residential construction, commercial construction, turnkey projects, villa construction, renovation & interior design.",
     "keywords": [
       "construction company in Coimbatore",
       "home builders in Coimbatore",

@@ -1,43 +1,73 @@
 {
   "story": {
-    "heading": "From Vision to Landmark",
+    "heading": "Built on Trust. Delivered with Expertise.",
     "paragraphs": [
-      "Founded in 2009 by Rajendra Babu with a small team of five passionate builders, Saanidhya Builders started with a single apartment project in Gandhipuram, Coimbatore.",
-      "Today, we have grown into a 200-member strong organisation delivering over 500 projects spanning luxury villas, commercial complexes, industrial buildings, and landmark residential communities across Tamil Nadu.",
-      "Our growth is built on a simple foundation: doing what is right for the client, every single time."
+      "Saanidhya Builders was founded in 2023 with a clear purpose — to bring professionalism, transparency, and quality craftsmanship to construction in Coimbatore.",
+      "Our strength lies in a well-balanced leadership structure that combines strategic business management with hands-on site execution expertise.",
+      "We don't just build structures — we build trust, value, and long-term relationships with every client we work with."
     ],
     "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
-    "imageAlt": "Saanidhya Builders story — construction in Coimbatore"
+    "imageAlt": "Saanidhya Builders construction site Coimbatore"
   },
   "values": [
     {
+      "icon": "ShieldCheck",
+      "title": "Trust & Transparency",
+      "desc": "Clear communication, honest pricing, and no hidden costs — at every stage."
+    },
+    {
       "icon": "Award",
-      "title": "Quality First",
-      "desc": "Uncompromising quality at every stage of construction."
+      "title": "Quality Workmanship",
+      "desc": "Premium materials and skilled execution with rigorous quality control on site."
     },
     {
-      "icon": "Heart",
-      "title": "Client Focus",
-      "desc": "Your satisfaction drives every decision we make."
+      "icon": "Clock",
+      "title": "Timely Completion",
+      "desc": "Milestone-based planning and dedicated execution to deliver on time, every time."
     },
     {
-      "icon": "Target",
-      "title": "Precision",
-      "desc": "Meticulous attention to detail in design and execution."
-    },
-    {
-      "icon": "Users",
-      "title": "Team Spirit",
-      "desc": "A united team of experts working toward your vision."
+      "icon": "HeartHandshake",
+      "title": "Client-First Approach",
+      "desc": "Your vision drives every decision — from first consultation to final handover."
     }
   ],
-  "mission": "To deliver exceptional construction experiences that transform our clients' visions into reality, built on a foundation of quality, transparency, and trust.",
-  "vision": "To be the most trusted name in construction across Tamil Nadu — known for our integrity, innovation, and the lasting quality of every structure we build.",
+  "mission": "To deliver high-quality construction experiences built on trust, transparency, and timely completion — giving every client complete confidence from project start to handover.",
+  "vision": "To become the most trusted name in construction across Coimbatore and Tamil Nadu — known for our integrity, professional approach, and the lasting quality of every structure we build.",
+  "team": [
+    {
+      "name": "Sandeep Kumar",
+      "role": "Business Head & Client Relations",
+      "shortRole": "Business Head",
+      "bio": "Sandeep leads business operations, client acquisition, and overall project coordination. He handles client requirements, legal documentation, budgeting, and ensures smooth communication from project initiation to final handover.",
+      "responsibilities": [
+        "Client acquisition & relations",
+        "Pricing, quotations & deal closing",
+        "Legal documentation & agreements",
+        "Project planning & coordination",
+        "Branding & business growth"
+      ],
+      "image": null,
+      "imageAlt": "Sandeep Kumar - Business Head, Saanidhya Builders"
+    },
+    {
+      "name": "Sankar",
+      "role": "Execution Head & Site Operations",
+      "shortRole": "Execution Head",
+      "bio": "Sankar heads construction execution and site operations. With hands-on field experience, he manages engineers, labor teams, materials, and daily site activities to ensure quality workmanship and structural standards.",
+      "responsibilities": [
+        "Site supervision & management",
+        "Engineering & technical work",
+        "Labor & material management",
+        "Quality control & safety",
+        "On-time project execution"
+      ],
+      "image": null,
+      "imageAlt": "Sankar - Execution Head, Saanidhya Builders"
+    }
+  ],
   "heroImage": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80",
   "previewImages": {
     "main": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-    "accent": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80",
-    "mainAlt": "Saanidhya Builders team and architecture Coimbatore",
-    "accentAlt": "Construction excellence Coimbatore"
+    "mainAlt": "Saanidhya Builders construction Coimbatore"
   }
 }
