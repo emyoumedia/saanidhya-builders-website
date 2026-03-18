@@ -6,14 +6,29 @@ import { company, localSeoData as localSeo } from '@/data'
 
 const iconMap: Record<string, React.ElementType> = { Clock, ShieldCheck, Award, Users }
 
+// ── Types ──────────────────────────────────────────────────────────────────
+type Testimonial = {
+  name: string
+  rating: number
+  text: string
+  area: string
+}
+
+type Highlight = {
+  icon: string
+  stat: string
+  label: string
+  desc: string
+}
+
 // Null-safe stat resolver — never renders "null★"
-const statValueMap = (key: string): string => {
+const statValueMap = (key: string): string | null => {
   const map: Record<string, string | null> = {
-    yearsExperience:    company.stats.yearsExperience,
-    projectsCompleted:  company.stats.projectsCompleted,
-    happyClients:       company.stats.happyClients,
-    googleRating:       company.stats.googleRating ? `${company.stats.googleRating}★` : null,
-    warranty:           company.warranty.structural,
+    yearsExperience:   company.stats.yearsExperience,
+    projectsCompleted: company.stats.projectsCompleted,
+    happyClients:      company.stats.happyClients,
+    googleRating:      company.stats.googleRating ? `${company.stats.googleRating}★` : null,
+    warranty:          company.warranty.structural,
   }
   return map[key] ?? key
 }
@@ -56,11 +71,12 @@ const orgSchema = {
 }
 
 // Filter highlights that have null stat values
-const validHighlights = localSeo.buildersCoimbatore.highlights.filter(
+const validHighlights = (localSeo.buildersCoimbatore.highlights as Highlight[]).filter(
   (h) => statValueMap(h.stat) !== null
 )
 
-const hasTestimonials = localSeo.buildersCoimbatore.testimonials.length > 0
+const testimonials = localSeo.buildersCoimbatore.testimonials as Testimonial[]
+const hasTestimonials = testimonials.length > 0
 
 export default function BuildersCoimbatorePage() {
   return (
@@ -94,7 +110,7 @@ export default function BuildersCoimbatorePage() {
         </div>
       </section>
 
-      {/* Highlights — filtered to remove null stats */}
+      {/* Highlights */}
       <section className="py-16 bg-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,7 +157,7 @@ export default function BuildersCoimbatorePage() {
         </div>
       </section>
 
-      {/* Testimonials — only shown when real reviews exist */}
+      {/* Testimonials */}
       {hasTestimonials ? (
         <section className="py-20 bg-navy">
           <div className="container mx-auto px-4 md:px-6">
@@ -149,7 +165,7 @@ export default function BuildersCoimbatorePage() {
               What Our Clients Say
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {localSeo.buildersCoimbatore.testimonials.map((t) => (
+              {testimonials.map((t) => (
                 <div key={t.name} className="bg-white/8 border border-white/10 rounded-2xl p-6">
                   <div className="flex gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
                     {[...Array(t.rating)].map((_, i) => (
@@ -167,12 +183,11 @@ export default function BuildersCoimbatorePage() {
           </div>
         </section>
       ) : (
-        /* No reviews yet — point to projects instead */
         <section className="py-16 bg-navy">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="font-playfair font-bold text-white text-2xl mb-3">See Our Work</h2>
             <p className="font-montserrat text-white/50 text-sm mb-6 max-w-md mx-auto">
-              We're building our online presence. Browse our completed projects to see our quality firsthand.
+              We&apos;re building our online presence. Browse our completed projects to see our quality firsthand.
             </p>
             <Link href="/projects" className="btn-primary">
               View Projects <ArrowRight size={15} />
