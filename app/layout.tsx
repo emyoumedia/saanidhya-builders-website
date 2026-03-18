@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/ui/FloatingButtons'
 import company from '@/data/company.json'
+import { headers } from 'next/headers'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -149,27 +150,21 @@ const jsonLd = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers()
+  const pathname = headersList.get('x-pathname')
+
+  const isComingSoon = pathname === '/coming-soon'
+
   return (
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="font-montserrat">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-white focus:text-sm focus:font-medium"
-          style={{ background: 'linear-gradient(135deg, #7A2EFF, #FF6A1A)' }}
-        >
-          Skip to main content
-        </a>
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <FloatingButtons />
+    <html lang="en">
+      <body>
+        {!isComingSoon && <Navbar />}
+        
+        <main>{children}</main>
+        
+        {!isComingSoon && <Footer />}
+        {!isComingSoon && <FloatingButtons />}
       </body>
     </html>
   )
