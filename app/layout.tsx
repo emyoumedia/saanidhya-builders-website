@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
-import FloatingButtons from '@/components/ui/FloatingButtons'
+import ConditionalChrome, { ConditionalFooter } from '@/components/ui/ConditionalChrome'
 import company from '@/data/company.json'
-import { headers } from 'next/headers'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -39,11 +36,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-    },
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   openGraph: {
     type: 'website',
@@ -52,14 +45,7 @@ export const metadata: Metadata = {
     siteName: company.name,
     title: company.seo.metaTitle,
     description: company.seo.metaDescription,
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: `${company.name} - Construction Company in Coimbatore`,
-      },
-    ],
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: `${company.name} - Construction Company in Coimbatore` }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -67,9 +53,7 @@ export const metadata: Metadata = {
     description: company.seo.metaDescription,
     images: ['/images/og-image.jpg'],
   },
-  alternates: {
-    canonical: company.website,
-  },
+  alternates: { canonical: company.website },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -83,7 +67,6 @@ export const metadata: Metadata = {
   },
 }
 
-// LocalBusiness schema — Service Area Business (no physical address)
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
@@ -93,47 +76,28 @@ const jsonLd = {
   url: company.website,
   telephone: company.contact.phone,
   email: company.contact.email,
-  // Service Area Business — serves customers at their location
   areaServed: {
     '@type': 'City',
     name: company.serviceArea.city,
-    containedInPlace: {
-      '@type': 'State',
-      name: company.serviceArea.state,
-    },
+    containedInPlace: { '@type': 'State', name: company.serviceArea.state },
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Construction Services',
     itemListElement: [
-      'Residential Construction',
-      'Commercial Construction',
-      'Turnkey Construction',
-      'House Construction',
-      'Villa Construction',
-      'Building Renovation',
-      'Architectural Planning',
-      'Building Design',
-      'Interior Design',
-      'Interior Renovation',
-    ].map((name) => ({
-      '@type': 'Offer',
-      itemOffered: { '@type': 'Service', name },
-    })),
+      'Residential Construction', 'Commercial Construction', 'Turnkey Construction',
+      'House Construction', 'Villa Construction', 'Building Renovation',
+      'Architectural Planning', 'Building Design', 'Interior Design', 'Interior Renovation',
+    ].map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),
   },
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
       opens: company.hours.opens,
       closes: company.hours.closes,
     },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Sunday',
-      opens: '00:00',
-      closes: '00:00',
-    },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '00:00', closes: '00:00' },
   ],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -142,29 +106,23 @@ const jsonLd = {
     areaServed: 'IN',
     availableLanguage: ['English', 'Tamil'],
   },
-  sameAs: [
-    company.social.facebook,
-    company.social.instagram,
-    company.social.linkedin,
-    company.social.youtube,
-  ],
+  sameAs: [company.social.facebook, company.social.instagram, company.social.linkedin, company.social.youtube],
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headersList = await headers()
-  const pathname = headersList.get('x-pathname')
-
-  const isComingSoon = pathname === '/coming-soon'
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        {!isComingSoon && <Navbar />}
-        
-        <main>{children}</main>
-        
-        {!isComingSoon && <Footer />}
-        {!isComingSoon && <FloatingButtons />}
+    <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="font-montserrat">
+        {/* ConditionalChrome reads pathname via usePathname() — hides nav/footer on /coming-soon */}
+        <ConditionalChrome />
+        <main id="main-content">{children}</main>
+        <ConditionalFooter />
       </body>
     </html>
   )
