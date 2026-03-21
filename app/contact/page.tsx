@@ -28,13 +28,34 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    await new Promise(r => setTimeout(r, 1500))
-    setLoading(false)
-    setSubmitted(true)
-  }
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    try {
+      const res = await fetch("/api/contact", {
+        method : "POST",
+        headers: { "Content-Type": "application/json" },
+        body   : JSON.stringify(form),
+      });
+  
+      const data = await res.json();
+  
+      if (!res.ok) throw new Error(data.error || "Server error");
+  
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      alert("Something went wrong. Please try WhatsApp or call us directly.");
+    } finally {
+      setLoading(false);
+    }
+  };
+ 
+// NOTE: fetch to Apps Script always resolves (even on script error) because of
+// the CORS opaque response. try/catch only catches network failures.
+// Script errors are visible in the Apps Script execution log.
+ 
 
   const reset = () => {
     setSubmitted(false)

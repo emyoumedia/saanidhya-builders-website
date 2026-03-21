@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
+import { Suspense } from 'react'
 import ConditionalChrome, { ConditionalFooter } from '@/components/ui/ConditionalChrome'
 import company from '@/data/company.json'
+
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -118,12 +120,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-montserrat">
-        {/* ConditionalChrome reads pathname via usePathname() — hides nav/footer on /coming-soon */}
-        <ConditionalChrome />
-        <main id="main-content">{children}</main>
-        <ConditionalFooter />
-      </body>
+        <body className="font-montserrat">
+          <Suspense fallback={null}>
+            <ConditionalChrome />
+          </Suspense>
+          <main id="main-content">{children}</main>
+          <Suspense fallback={null}>
+            <ConditionalFooter />
+          </Suspense>
+        </body>
     </html>
   )
 }
