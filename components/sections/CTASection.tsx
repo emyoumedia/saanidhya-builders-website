@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import company from '@/data/company.json'
+import { company }from '@/data'
 
 export default function CTASection() {
   const { cta } = company.copy

@@ -3,7 +3,7 @@
     "id": "residential",
     "icon": "Home",
     "title": "Residential Construction",
-    "slug": "residential-construction",
+    "slug": "residential-construction-coimbatore",
     "tagline": "Your dream home, built to perfection",
     "description": "We build homes that reflect your personality and lifestyle. From 2BHK independent houses to spacious villas, our residential construction services in Coimbatore are tailored to your vision and budget.",
     "shortDesc": "Custom homes, villas, apartments built to your vision with premium materials and Vastu-compliant designs.",
@@ -16,13 +16,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
     "imageAlt": "Residential construction in Coimbatore by Saanidhya Builders",
-    "color": "#7A2EFF"
+    "color": "#7A2EFF",
+    "featured": true,
+    "priority": 1
   },
   {
     "id": "commercial",
     "icon": "Building2",
     "title": "Commercial Construction",
-    "slug": "commercial-construction",
+    "slug": "commercial-construction-coimbatore",
     "tagline": "Functional spaces that drive business",
     "description": "We build functional, modern commercial structures that meet business demands — from small office buildings to retail spaces and warehouses. Every project is managed with a dedicated site team.",
     "shortDesc": "Offices, retail spaces, warehouses — functional, modern structures built on time and within budget.",
@@ -35,13 +37,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
     "imageAlt": "Commercial construction Coimbatore by Saanidhya Builders",
-    "color": "#FF6A1A"
+    "color": "#FF6A1A",
+    "featured": true,
+    "priority": 2
   },
   {
     "id": "turnkey",
     "icon": "Key",
     "title": "Turnkey Construction",
-    "slug": "turnkey-construction",
+    "slug": "turnkey-construction-coimbatore",
     "tagline": "You hand us a concept. We hand you the keys.",
     "description": "Our most comprehensive service — you share your vision, we handle everything from approvals and design to construction and interior finishing. One contract, one team, zero coordination hassle.",
     "shortDesc": "Complete end-to-end project management from concept to keys. One contract, one team, zero hassles.",
@@ -54,13 +58,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
     "imageAlt": "Turnkey construction services Coimbatore",
-    "color": "#7A2EFF"
+    "color": "#7A2EFF",
+    "featured": true,
+    "priority": 3
   },
   {
     "id": "house-construction",
     "icon": "HousePlus",
     "title": "House Construction",
-    "slug": "house-construction",
+    "slug": "house-construction-coimbatore",
     "tagline": "Build the home you've always imagined",
     "description": "Specialised house construction services in Coimbatore for independent homes, row houses, and duplex units. We handle everything from foundation to finishing, including all regulatory approvals.",
     "shortDesc": "Independent homes, row houses, duplex units — built with quality materials and skilled craftsmen.",
@@ -73,13 +79,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     "imageAlt": "House construction in Coimbatore by Saanidhya Builders",
-    "color": "#FF6A1A"
+    "color": "#FF6A1A",
+    "featured": true,
+    "priority": 4
   },
   {
     "id": "villa-construction",
     "icon": "Castle",
     "title": "Villa Construction",
-    "slug": "villa-construction",
+    "slug": "villa-constructio-coimbatore",
     "tagline": "Luxury living, crafted to the finest detail",
     "description": "Premium villa construction in Coimbatore with bespoke architecture and luxury finishes. From compact garden villas to spacious estate homes, we build to your exact specification with quality materials throughout.",
     "shortDesc": "Bespoke villas with premium finishes, smart home features, and landscaped gardens.",
@@ -92,13 +100,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
     "imageAlt": "Villa construction Coimbatore by Saanidhya Builders",
-    "color": "#7A2EFF"
+    "color": "#7A2EFF",
+    "featured": false,
+    "priority": 1
   },
   {
     "id": "renovation",
     "icon": "Hammer",
     "title": "Building Renovation",
-    "slug": "building-renovation",
+    "slug": "building-renovation-coimbatore",
     "tagline": "Breathe new life into existing spaces",
     "description": "Transform your existing home or commercial building with our renovation services. We handle structural upgrades, facade improvements, internal remodelling, and full interior renovation with minimal disruption.",
     "shortDesc": "Full renovation and remodeling for homes and commercial spaces — structural changes to interior upgrades.",
@@ -111,13 +121,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
     "imageAlt": "Building renovation services Coimbatore",
-    "color": "#FF6A1A"
+    "color": "#FF6A1A",
+    "featured": false,
+    "priority": 1
   },
   {
     "id": "architectural-planning",
     "icon": "Palette",
     "title": "Architectural Planning",
-    "slug": "architectural-planning",
+    "slug": "architectural-planning-coimbatore",
     "tagline": "Where vision meets precision",
     "description": "Our architects create detailed architectural plans, 3D visualisations, and structural drawings tailored to your plot and requirements. We also manage all DTCP and regulatory approvals on your behalf.",
     "shortDesc": "3D architectural renders, floor plans, structural drawings, and DTCP approval management.",
@@ -130,13 +142,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
     "imageAlt": "Architectural planning services Coimbatore",
-    "color": "#7A2EFF"
+    "color": "#7A2EFF",
+    "featured": false,
+    "priority": 1
   },
   {
     "id": "building-design",
     "icon": "LayoutDashboard",
     "title": "Building Design",
-    "slug": "building-design",
+    "slug": "building-design-coimbatore",
     "tagline": "Designs that define your space",
     "description": "Creative and functional building design for residential and commercial projects. We blend contemporary aesthetics with practical space planning, ensuring every design is both beautiful and buildable.",
     "shortDesc": "Residential and commercial building design — elevations, space planning, and 3D visualisations.",
@@ -149,13 +163,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
     "imageAlt": "Building design services Coimbatore",
-    "color": "#FF6A1A"
+    "color": "#FF6A1A",
+    "featured": false,
+    "priority": 1
   },
   {
     "id": "interior-design",
     "icon": "Sofa",
     "title": "Interior Design",
-    "slug": "interior-design",
+    "slug": "interior-design-coimbatore",
     "tagline": "Spaces that tell your story",
     "description": "Complete interior design for homes and commercial spaces in Coimbatore. We create cohesive, functional interiors — from modular kitchens and wardrobes to false ceilings, lighting, and flooring.",
     "shortDesc": "Full interior design — modular kitchens, wardrobes, false ceilings, flooring, lighting & furniture.",
@@ -168,13 +184,15 @@
     ],
     "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
     "imageAlt": "Interior design services Coimbatore by Saanidhya Builders",
-    "color": "#7A2EFF"
+    "color": "#7A2EFF",
+    "featured": false,
+    "priority": 1
   },
   {
     "id": "interior-renovation",
     "icon": "PaintBucket",
     "title": "Interior Renovation",
-    "slug": "interior-renovation",
+    "slug": "interior-renovation-coimbatore",
     "tagline": "Refresh your space, refresh your life",
     "description": "Revitalise your existing home interiors without a full rebuild. We offer targeted interior renovation including kitchen upgrades, bathroom remodelling, flooring replacement, false ceiling installation, and painting.",
     "shortDesc": "Kitchen upgrades, bathroom remodelling, flooring, painting, and false ceiling renovation.",
@@ -187,6 +205,8 @@
     ],
     "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
     "imageAlt": "Interior renovation services Coimbatore",
-    "color": "#FF6A1A"
+    "color": "#FF6A1A",
+    "featured": false,
+    "priority": 4
   }
 ]

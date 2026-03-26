@@ -14,7 +14,7 @@ const nextConfig = {
     remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400,
-    qualities: [65, 75], // ✅ added — fixes srcSet mismatch and quality warning
+    qualities: [60, 65, 75],
   },
   async headers() {
     return [

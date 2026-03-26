@@ -1,7 +1,6 @@
 import { MessageSquare, FileText, Pencil, HardHat, Key } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import processData from '@/data/process.json'
-import company from '@/data/company.json'
+import { company , processData }from '@/data'
 
 const iconMap: Record<string, React.ElementType> = {
   MessageSquare, FileText, Pencil, HardHat, Key,

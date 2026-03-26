@@ -1,19 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, Clock, MessageCircle, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
-import { company, navData as nav } from '@/data'
+import { company, navData as nav, servicesData } from '@/data'
 
-// ── Types ──────────────────────────────────────────────
 type NavItem = { href: string; label: string }
 
-// ── Google Business Icon ───────────────────────────────
-const GmbIcon = () => (
-  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-  </svg>
-)
-
-// ── Social config ──────────────────────────────────────
 const SOCIALS = [
   { icon: Facebook,  key: 'facebook',  label: 'Facebook'  },
   { icon: Instagram, key: 'instagram', label: 'Instagram' },
@@ -21,40 +14,52 @@ const SOCIALS = [
   { icon: Youtube,   key: 'youtube',   label: 'YouTube'   },
 ]
 
-// Safe URL resolver — filters out placeholder values
 function getSocialUrl(key: string): string | null {
   const val = company.social[key as keyof typeof company.social]
   if (typeof val !== 'string') return null
-  if (val.trim() === '') return null
-  if (val.includes('REPLACE')) return null
+  if (val.trim() === '' || val.includes('REPLACE')) return null
   return val
 }
 
-const gmbUrl = getSocialUrl('gmbLink')
+/**
+ * Clicking a service link:
+ * 1. Writes the service id to sessionStorage so ServicesPage reads it on mount.
+ * 2. Navigates via a normal <a href> — no useRouter, no hydration mismatch.
+ *    The hash in the href is a fallback; sessionStorage is the primary signal.
+ */
+function ServiceLink({ serviceId, label }: { serviceId: string; label: string }) {
+  const href = `/services#service-${serviceId}`
 
-const socialIconClass =
-  'w-8 h-8 rounded-full bg-white/6 border border-white/12 flex items-center justify-center text-white/55 hover:text-white hover:border-orange/50 hover:bg-orange/10 transition-all duration-200'
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Write flag before navigation so ServicesPage sees it on mount
+    try { sessionStorage.setItem('openServiceId', serviceId) } catch {}
+    // Let the browser follow the <a href> normally (no e.preventDefault)
+  }
 
-// ── Footer ─────────────────────────────────────────────
+  return (
+    <a
+      href={href}
+      onClick={handleClick}
+      className="text-xs text-white/60 hover:text-orange hover:translate-x-1 transition-all duration-200 inline-block"
+    >
+      {label}
+    </a>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
 
-        {/* ── Main grid ── */}
+        {/* MAIN */}
         <div className="py-10 border-b border-white/8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10">
 
-            {/* 1 — Brand */}
+            {/* BRAND */}
             <div>
               <div className="flex items-center gap-2.5 mb-4">
-                <Image
-                  src="/logo/logo.png"
-                  alt={`${company.name} logo`}
-                  width={36}
-                  height={36}
-                  className="rounded-lg"
-                />
+                <Image src="/logo/logo.png" alt="logo" width={36} height={36} />
                 <div>
                   <div className="font-playfair font-bold text-base">Saanidhya</div>
                   <div className="text-[10px] text-orange uppercase tracking-wider">Builders</div>
@@ -65,8 +70,8 @@ export default function Footer() {
                 {company.tagline}. Serving {company.serviceArea.city} since {company.founded}.
               </p>
 
-              {/* Socials */}
-              <div className="flex items-center gap-2 mb-4">
+              {/* SOCIAL */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
                 {SOCIALS.map(({ icon: Icon, key, label }) => {
                   const url = getSocialUrl(key)
                   if (!url) return null
@@ -76,25 +81,12 @@ export default function Footer() {
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={label}
-                      className={socialIconClass}
+                      className="w-8 h-8 rounded-full bg-white/6 border border-white/12 flex items-center justify-center text-white/55 hover:text-white hover:border-orange/50 hover:bg-orange/10 transition-all duration-200"
                     >
                       <Icon size={14} />
                     </a>
                   )
                 })}
-
-                {gmbUrl && (
-                  <a
-                    href={gmbUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Google Business Profile"
-                    className={socialIconClass}
-                  >
-                    <GmbIcon />
-                  </a>
-                )}
               </div>
 
               <p className="text-[11px] text-white/40">
@@ -102,37 +94,28 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* 2 — Services */}
+            {/* SERVICES */}
             <div>
               <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Services</h3>
               <ul className="space-y-2">
-                {[
-                  { href: '/residential-construction-coimbatore', label: 'Residential Construction' },
-                  { href: '/commercial-construction-coimbatore',  label: 'Commercial Construction'  },
-                  { href: '/construction-company-coimbatore',     label: 'House Construction'       },
-                  { href: '/builders-coimbatore',                 label: 'Turnkey Construction'     },
-                ].map(({ href, label }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className="text-xs text-white/60 hover:text-orange hover:translate-x-1 transition-all duration-200 inline-block"
-                    >
-                      {label}
-                    </Link>
+                {(servicesData as any[]).slice(0, 7).map((s) => (
+                  <li key={s.id}>
+                    <ServiceLink serviceId={s.id} label={s.title} />
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* 3 — Locations */}
+            {/* PAGES */}
             <div>
-              <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Locations</h3>
+              <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Pages</h3>
               <ul className="space-y-2">
                 {[
-                  { href: '/construction-company-coimbatore', label: 'Builders in Coimbatore'      },
-                  { href: '/construction-cost/coimbatore',    label: 'Construction Cost Coimbatore' },
-                  { href: '/construction-cost/chennai',       label: 'Construction Cost Chennai'    },
-                  { href: '/construction-cost/bangalore',     label: 'Construction Cost Bangalore'  },
+                  { href: '/', label: 'Home' },
+                  { href: '/about', label: 'About Us' },
+                  { href: '/services', label: 'Services' },
+                  { href: '/projects', label: 'Projects' },
+                  { href: '/contact', label: 'Contact' },
                 ].map(({ href, label }) => (
                   <li key={href}>
                     <Link
@@ -146,39 +129,33 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* 4 — Contact */}
+            {/* CONTACT */}
             <div>
               <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Contact</h3>
               <div className="space-y-3 text-xs">
                 <a
                   href={`tel:${company.contact.phoneRaw}`}
-                  className="flex items-center gap-2 text-white/70 hover:text-orange transition-colors"
+                  className="flex items-center gap-2 text-white/70 hover:text-orange"
                 >
-                  <Phone size={12} />
-                  {company.contact.phoneDisplay}
+                  <Phone size={12} /> {company.contact.phoneDisplay}
                 </a>
                 <a
                   href={company.contact.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/70 hover:text-green-400 transition-colors"
+                  className="flex items-center gap-2 text-white/70 hover:text-green-400"
                 >
-                  <MessageCircle size={12} />
-                  WhatsApp Us
+                  <MessageCircle size={12} /> WhatsApp Us
                 </a>
                 <a
                   href={`mailto:${company.contact.email}`}
-                  className="flex items-center gap-2 text-white/70 hover:text-orange transition-colors"
+                  className="flex items-center gap-2 text-white/70 hover:text-orange"
                 >
-                  <Mail size={12} />
-                  {company.contact.email}
+                  <Mail size={12} /> {company.contact.email}
                 </a>
                 <div className="flex items-start gap-2 text-white/50">
-                  <Clock size={12} className="mt-0.5 flex-shrink-0" />
-                  <span>
-                    {company.hours.weekdays}<br />
-                    {company.hours.time}
-                  </span>
+                  <Clock size={12} />
+                  <span>{company.hours.time}</span>
                 </div>
               </div>
             </div>
@@ -186,17 +163,17 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom bar ── */}
-        <div className="py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-montserrat text-[11px] text-white/35">
+        {/* BOTTOM */}
+        <div className="py-4 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
+          <p className="text-[11px] text-white/35">
             © {new Date().getFullYear()} {company.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex gap-4">
             {(nav.footerLegal as NavItem[]).map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="font-montserrat text-[11px] text-white/35 hover:text-white/60 transition-colors"
+                className="text-[11px] text-white/35 hover:text-white/60"
               >
                 {label}
               </Link>

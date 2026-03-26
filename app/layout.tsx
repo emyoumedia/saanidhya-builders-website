@@ -26,6 +26,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(company.website),
   title: {
     default: company.seo.metaTitle,
     template: `%s | Saanidhya Builders Coimbatore`,

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion'
-import company from '@/data/company.json'
+import { company, servicesData }from '@/data'
 
 const ArrowRight = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -13,41 +13,32 @@ const MessageCircle = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
 )
 
-// Each slide = one service with its real image
-const SLIDES = [
-  {
-    bg:      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=75',
-    bgAlt:   'Residential construction Coimbatore',
-    image:   'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80',
-    service: 'Residential Construction',
-    tagline: 'Custom homes built to your vision',
-    slug:    '/services/residential-construction',
-  },
-  {
-    bg:      'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1920&q=75',
-    bgAlt:   'Villa construction Coimbatore',
-    image:   'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80',
-    service: 'Villa Construction',
-    tagline: 'Luxury living, crafted to the finest detail',
-    slug:    '/services/villa-construction',
-  },
-  {
-    bg:      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=75',
-    bgAlt:   'Turnkey construction Coimbatore',
-    image:   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80',
-    service: 'Turnkey Construction',
-    tagline: 'One contract. Zero hassle. Move-in ready.',
-    slug:    '/services/turnkey-construction',
-  },
-  {
-    bg:      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=75',
-    bgAlt:   'Building renovation Coimbatore',
-    image:   'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80',
-    service: 'Building Renovation',
-    tagline: 'Breathe new life into existing spaces',
-    slug:    '/services/building-renovation',
-  },
-]
+function shuffleArray(arr: any[]) {
+  return [...arr].sort(() => Math.random() - 0.5)
+}
+
+const MAX_SLIDES = 5
+const ENABLE_RANDOM = true
+
+const featuredServices = servicesData.filter((s: any) => s.featured)
+
+// fallback if no featured
+const baseServices = featuredServices.length ? featuredServices : servicesData
+
+// sort by priority
+const sorted = baseServices.sort((a: any, b: any) => (a.priority ?? 999) - (b.priority ?? 999))
+
+// optional randomization
+const finalServices = ENABLE_RANDOM ? shuffleArray(sorted) : sorted
+
+export const SLIDES = finalServices.slice(0, MAX_SLIDES).map((s: any) => ({
+  bg: `${s.image.replace('w=800', 'w=1920')}`,
+  bgAlt: s.imageAlt,
+  image: s.image,
+  service: s.title,
+  tagline: s.tagline,
+  slug: `/services/${s.slug}`,
+}))
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const co = company as any
@@ -58,7 +49,7 @@ const STATS = [
   { value: company.warranty.structural,     label: 'Warranty'  },
   ...(company.stats.googleRating
     ? [{ value: `${company.stats.googleRating}★`, label: 'Rating' }]
-    : [{ value: 'RERA', label: 'Registered' }]
+    : []
   ),
 ]
 
@@ -166,7 +157,8 @@ export default function HeroSection() {
                 </m.div>
 
                 <m.div {...fadeUp(0.30)}>
-                  <div className="grid grid-cols-4 gap-3 pt-6 border-t border-white/10">
+                  <div className="grid gap-3 pt-6 border-t border-white/10"
+                   style={{ gridTemplateColumns: `repeat(${STATS.length}, minmax(0, 1fr))` }}>
                     {STATS.map(({ value, label }) => (
                       <div key={label} className="text-center">
                         <div className="font-playfair font-bold text-white text-sm sm:text-xl leading-none mb-0.5">{value}</div>

@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { Home, Building2, Key, HousePlus, Castle, Hammer } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import servicesData from '@/data/services.json'
-import company from '@/data/company.json'
+import { company , servicesData }from '@/data'
 
 const iconMap: Record<string, React.ElementType> = {
   Home, Building2, Key, HousePlus, Castle, Hammer,

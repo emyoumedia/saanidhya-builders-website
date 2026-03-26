@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import company from '@/data/company.json'
+import { company }from '@/data'
 
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
 

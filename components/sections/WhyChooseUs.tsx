@@ -1,7 +1,7 @@
 import { Award, Clock, ShieldCheck, HeartHandshake, CheckCircle2, Wrench } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
-import whyData from '@/data/whyChooseUs.json'
-import company from '@/data/company.json'
+
+import { company  , whyData}from '@/data'
 
 const iconMap: Record<string, React.ElementType> = {
   Award, Clock, ShieldCheck, HeartHandshake, CheckCircle2, Wrench,

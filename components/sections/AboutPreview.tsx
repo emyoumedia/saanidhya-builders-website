@@ -13,7 +13,7 @@ const company = companyRaw as any
 const aboutData = aboutRaw as unknown as AboutData
 
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
-
+const imageSrc =aboutData.previewImages.main || "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80";
 export default function AboutPreview() {
   const { about } = company.copy
 
@@ -25,12 +25,13 @@ export default function AboutPreview() {
           {/* Image + years badge */}
           <AnimatedSection direction="right">
             <div className="relative rounded-2xl overflow-hidden" style={{ height: '420px' }}>
-              <Image
-                src={aboutData.previewImages.main}
-                alt={aboutData.previewImages.mainAlt}
-                fill sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+             <Image
+    src={imageSrc}
+    alt={aboutData.previewImages.mainAlt || "About us construction"}
+    fill
+    sizes="(max-width: 1024px) 100vw, 50vw"
+    className="object-cover"
+  />
               <div className="absolute bottom-5 left-5 bg-navy rounded-xl px-5 py-3 flex items-center gap-3">
                 <span
                   className="font-playfair font-bold text-2xl leading-none"

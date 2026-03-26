@@ -2,7 +2,7 @@
 
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { Building2, Award, Users, Star } from 'lucide-react'
-import company from '@/data/company.json'
+import { company }from '@/data'
 
 const stats = [
   { icon: Building2, value: company.stats.projectsCompleted, label: 'Projects' },
