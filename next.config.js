@@ -14,14 +14,14 @@ const nextConfig = {
     remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400,
-    qualities: [50,60, 65, 75],
+    qualities: [35,45,50,55,60, 65,75],
   },
   async headers() {
   return [
     {
       source: '/(.*)',
       headers: securityHeaders,
-    },
+    }
   ]
 },
  images: {
