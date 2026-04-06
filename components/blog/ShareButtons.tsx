@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
-import { Twitter, Facebook, Linkedin, Link2, Check } from 'lucide-react'
-
+import { Link2, Check } from 'lucide-react'
+import { FaFacebook, FaLinkedin , FaTwitter} from "react-icons/fa";
 interface Props { title: string; url: string }
 
 export default function ShareButtons({ title, url }: Props) {
@@ -16,9 +16,9 @@ export default function ShareButtons({ title, url }: Props) {
   }
 
   const links = [
-    { label:'Twitter',  Icon: Twitter,  href:`https://twitter.com/intent/tweet?text=${enc(title)}&url=${enc(url)}` },
-    { label:'Facebook', Icon: Facebook, href:`https://www.facebook.com/sharer/sharer.php?u=${enc(url)}` },
-    { label:'LinkedIn', Icon: Linkedin, href:`https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}` },
+    { label:'Twitter',  Icon: FaTwitter,  href:`https://twitter.com/intent/tweet?text=${enc(title)}&url=${enc(url)}` },
+    { label:'Facebook', Icon: FaFacebook, href:`https://www.facebook.com/sharer/sharer.php?u=${enc(url)}` },
+    { label:'LinkedIn', Icon: FaLinkedin, href:`https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}` },
   ]
 
   return (

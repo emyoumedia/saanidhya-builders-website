@@ -1,6 +1,6 @@
 {
   "name": "Saanidhya Builders",
-  "tagline": "Expert Planning. Strong Execution. Complete Transparency.",
+  "tagline": "Your Vision.Our Craft",
   "businessType": "Construction Company",
   "founded": "2023",
   "description": "Saanidhya Builders is a professionally managed construction company delivering high-quality residential and commercial projects with a strong focus on trust, transparency, and timely completion.",
@@ -36,6 +36,7 @@
     "projectsCompleted": "9+",
     "projectsOngoing": "3",
     "yearsExperience": "2+",
+    "leadExperience": "15+",
     "happyClients": "9+",
     "googleRating": null,
     "reviewCount": null,
@@ -78,10 +79,10 @@
   "certifications": [
   ],
   "warranty": {
-    "structural": "5 years",
-    "plumbingElectrical": "1 year",
-    "waterproofing": "3 years"
-  },
+  "structural": "10–15 years",
+  "plumbingElectrical": "1–2 years",
+  "waterproofing": "1–3 years"
+},
   "copy": {
     "hero": {
       "badge": "Trusted Builders",

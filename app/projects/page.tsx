@@ -329,7 +329,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <CTASection />
+      {/* <CTASection /> */}
     </>
   )
 }

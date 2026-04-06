@@ -6,6 +6,7 @@ import { Phone, Mail, Clock, MapPin, Send, CheckCircle2, MessageCircle } from 'l
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { company, servicesData } from '@/data'
+import { trackEvent } from '@/lib/tracking'
 
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
 
@@ -32,24 +33,48 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
   
-    try {
-      const res = await fetch("/api/contact", {
-        method : "POST",
-        headers: { "Content-Type": "application/json" },
-        body   : JSON.stringify(form),
+try {
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    // ❗ Track failure
+    trackEvent('form_error', {
+      event_category: 'error',
+      event_label: 'Contact Form Failed',
+      message: data.error || 'Server error',
+    });
+
+    throw new Error(data.error || "Server error");
+  }
+
+  // ✅ Track success (REAL LEAD)
+      trackEvent('form_submit', {
+        event_category: 'lead',
+        event_label: 'Contact Form',
+        page: window.location.pathname,
       });
-  
-      const data = await res.json();
-  
-      if (!res.ok) throw new Error(data.error || "Server error");
-  
+
       setSubmitted(true);
+
     } catch (err) {
       console.error("Submission error:", err);
+
+      // ❗ Network / unexpected error tracking
+      trackEvent('form_error', {
+        event_category: 'error',
+        event_label: 'Contact Form Exception',
+      });
+
       alert("Something went wrong. Please try WhatsApp or call us directly.");
     } finally {
-      setLoading(false);
-    }
+          setLoading(false);
+        }
   };
  
 // NOTE: fetch to Apps Script always resolves (even on script error) because of

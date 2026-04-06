@@ -116,13 +116,16 @@ export default function FeaturedProjects() {
 
                   {/* Image */}
                   <div className="relative h-44 w-full">
-                    <Image
-                      src={imageSrc}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+  <Image
+    src={imageSrc}
+    alt={project.title}
+    fill
+    className="object-cover"
+    sizes="(max-width: 768px) 100vw, 
+           (max-width: 1200px) 50vw, 
+           33vw"
+  />
+</div>
 
                   {/* Progress */}
                   <div

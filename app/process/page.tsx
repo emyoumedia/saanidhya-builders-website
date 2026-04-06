@@ -66,13 +66,9 @@ export default function ProcessPage() {
                     </div>
                     {/* Content */}
                     <div className="flex-1 bg-white rounded-2xl p-7 border border-navy/8 shadow-sm">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <h2 className="font-playfair font-bold text-navy text-xl">{step.title}</h2>
-                        <span className="font-montserrat text-xs text-white/90 px-3 py-1 rounded-full flex-shrink-0"
-                          style={{ background: color }}>
-                          {step.duration}
-                        </span>
-                      </div>
+                      <div className="flex items-start gap-4 mb-3">
+                          <h2 className="font-playfair font-bold text-navy text-xl">{step.title}</h2>
+                        </div>
                       <p className="font-montserrat text-navy/60 text-sm leading-relaxed mb-4">
                         {step.description}
                       </p>
@@ -93,27 +89,29 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* Warranty strip */}
-      <section className="py-14 bg-navy">
-        <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection className="text-center mb-10">
-            <h2 className="font-playfair font-bold text-white text-3xl mb-2">Our Warranty Promise</h2>
-            <p className="font-montserrat text-white/50 text-sm">Every project comes with a comprehensive warranty package</p>
-          </AnimatedSection>
-          <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {[
-              { label: 'Structural Warranty', value: company.warranty.structural },
-              { label: 'Plumbing & Electrical', value: company.warranty.plumbingElectrical },
-              { label: 'Waterproofing', value: company.warranty.waterproofing },
-            ].map(({ label, value }) => (
-              <div key={label} className="text-center bg-white/5 border border-white/8 rounded-2xl p-6">
-                <div className="font-playfair font-bold text-3xl gradient-text mb-2">{value}</div>
-                <div className="font-montserrat text-white/50 text-sm">{label}</div>
-              </div>
-            ))}
+        {/* Warranty strip */}
+        <section className="py-14 bg-navy">
+          <div className="container mx-auto px-4 md:px-6">
+            <AnimatedSection className="text-center mb-10">
+              <h2 className="font-playfair font-bold text-white text-3xl mb-2">Our Warranty Promise</h2>
+              <p className="font-montserrat text-white/50 text-sm">Every project comes with a comprehensive warranty package</p>
+            </AnimatedSection>
+            <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              {[
+                { label: 'Structural Warranty', value: company.warranty.structural },
+                { label: 'Plumbing & Electrical', value: company.warranty.plumbingElectrical },
+                { label: 'Waterproofing', value: company.warranty.waterproofing },
+              ].map(({ label, value }) => (
+                <div key={label} className="text-center bg-white/5 border border-white/8 rounded-2xl p-6">
+                  <div className="font-playfair font-bold text-3xl gradient-text mb-2">{value}</div>
+                  <div className="font-montserrat text-white/50 text-sm">{label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="font-montserrat text-white/40 text-xs text-center mt-6 max-w-xl mx-auto">
+            Warranty periods vary based on materials, brands, and site conditions.Exact terms are outlined in your project contract.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
       <CTASection />
     </>

@@ -3,7 +3,6 @@
     "step": "01",
     "title": "Consultation",
     "icon": "MessageSquare",
-    "duration": "1–2 days",
     "description": "We start with a deep-dive consultation to understand your vision, needs, and budget. Our experts guide you through possibilities, site constraints, and realistic cost expectations.",
     "deliverables": [
       "Project brief document",
@@ -16,7 +15,6 @@
     "step": "02",
     "title": "Planning",
     "icon": "FileText",
-    "duration": "2–4 weeks",
     "description": "Detailed project planning including site surveys, soil testing, structural engineering, cost estimation, and regulatory compliance checks. Every detail mapped before we begin.",
     "deliverables": [
       "Detailed BOQ (Bill of Quantities)",
@@ -29,7 +27,6 @@
     "step": "03",
     "title": "Design",
     "icon": "Pencil",
-    "duration": "2–6 weeks",
     "description": "Our architects create stunning 3D designs and blueprints, refined iteratively until you are 100% satisfied. We handle DTCP approvals and all permit submissions.",
     "deliverables": [
       "3D exterior & interior renders",
@@ -42,7 +39,6 @@
     "step": "04",
     "title": "Construction",
     "icon": "HardHat",
-    "duration": "10–20 months",
     "description": "Expert execution with premium materials, certified contractors, and real-time progress updates at every milestone. Weekly WhatsApp photo updates keep you informed from anywhere.",
     "deliverables": [
       "Foundation & structure",
@@ -55,11 +51,10 @@
     "step": "05",
     "title": "Handover",
     "icon": "Key",
-    "duration": "1 week",
-    "description": "Final quality inspection, snagging walkthrough, and post-completion support. Your dream home, delivered with a 5-year structural warranty and complete documentation.",
+    "description": "Final quality inspection, snagging walkthrough, and post-completion support. Your dream home, delivered with complete documentation and post-handover support.",
     "deliverables": [
       "Completion certificate",
-      "5-year structural warranty card",
+      "Warranty card",
       "As-built drawings",
       "Post-handover support guide"
     ]

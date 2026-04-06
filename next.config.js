@@ -17,14 +17,13 @@ const nextConfig = {
     qualities: [60, 65, 75],
   },
   async headers() {
-    return [
-      { source: '/(.*)', headers: securityHeaders },
-      {
-        source: '/_next/static/(.*)',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
-      },
-    ]
-  },
+  return [
+    {
+      source: '/(.*)',
+      headers: securityHeaders,
+    },
+  ]
+},
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },

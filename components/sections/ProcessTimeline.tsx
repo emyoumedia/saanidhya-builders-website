@@ -10,7 +10,7 @@ const STEP_COLORS = ['#7A2EFF', '#9A2EE8', '#BF4ECF', '#E06A1A', '#FF6A1A']
 
 type ProcessStep = {
   step: string; title: string; icon: string
-  duration: string; description: string; deliverables: string[]
+  description: string; deliverables: string[]
 }
 
 export default function ProcessTimeline() {
@@ -56,10 +56,6 @@ export default function ProcessTimeline() {
                     <h3 className="font-montserrat font-semibold text-navy text-sm mb-1.5 leading-snug">
                       {step.title}
                     </h3>
-                    <span className="font-montserrat text-xs font-semibold px-3 py-1 rounded-full"
-                      style={{ color, background: `${color}18` }}>
-                      {step.duration}
-                    </span>
                   </div>
                 </AnimatedSection>
               )

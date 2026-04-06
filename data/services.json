@@ -11,10 +11,10 @@
       "Custom floor plans",
       "Premium material sourcing",
       "Vastu-compliant designs",
-      "5-year structural warranty",
+      "Warranty coverage included",
       "All permits handled"
     ],
-    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+    "image": "/images/services/residential_construction.webp",
     "imageAlt": "Residential construction in Coimbatore by Saanidhya Builders",
     "color": "#7A2EFF",
     "featured": true,
@@ -96,7 +96,7 @@
       "Luxury material selection",
       "Private pool options",
       "Landscaping & garden design",
-      "5-year structural warranty"
+      "Warranty coverage included"
     ],
     "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
     "imageAlt": "Villa construction Coimbatore by Saanidhya Builders",
@@ -172,9 +172,9 @@
     "icon": "Sofa",
     "title": "Interior Design",
     "slug": "interior-design-coimbatore",
-    "tagline": "Spaces that tell your story",
-    "description": "Complete interior design for homes and commercial spaces in Coimbatore. We create cohesive, functional interiors — from modular kitchens and wardrobes to false ceilings, lighting, and flooring.",
-    "shortDesc": "Full interior design — modular kitchens, wardrobes, false ceilings, flooring, lighting & furniture.",
+    "tagline": "Connecting you with the right interior talent",
+    "description": "We connect you with trusted interior design specialists in Coimbatore and coordinate the entire process on your behalf — from modular kitchens and wardrobes to false ceilings, lighting, and flooring. You get quality results without managing multiple vendors.",
+    "shortDesc": "We coordinate trusted interior specialists for homes and commercial spaces — kitchens, wardrobes, ceilings, flooring & lighting.",
     "benefits": [
       "Modular kitchen design",
       "Custom wardrobes",

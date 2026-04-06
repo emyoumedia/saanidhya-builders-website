@@ -6,6 +6,9 @@ import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/ui/FloatingButtons'
 import company from '@/data/company.json'
 import { headers } from 'next/headers'
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import MetaPixel from '@/components/analytics/MetaPixel'
+import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -159,14 +162,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body>
-        {!isComingSoon && <Navbar />}
-        
-        <main>{children}</main>
-        
-        {!isComingSoon && <Footer />}
-        {!isComingSoon && <FloatingButtons />}
-      </body>
+           <body>
+          <GoogleAnalytics />
+          <MetaPixel />
+          <AnalyticsTracker />
+
+          {!isComingSoon && <Navbar />}
+          
+          <main>{children}</main>
+          
+          {!isComingSoon && <Footer />}
+          {!isComingSoon && <FloatingButtons />}
+        </body>
     </html>
   )
 }

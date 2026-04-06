@@ -4,22 +4,14 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, BadgeIndianRupee } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import nav from '@/data/nav.json'
 
-
-/*
-  Pages whose hero is dark navy — navbar starts transparent and blends in.
-  All other pages (blog, category, tag, about, services, etc.) — navbar must
-  always show a solid navy background so white text is readable over light bg.
-*/
 const DARK_HERO_ROUTES = ['/', '/projects', '/about', '/services', '/process', '/testimonials', '/contact']
 
 function routeHasDarkHero(pathname: string): boolean {
-  // Exact matches
   if (DARK_HERO_ROUTES.includes(pathname)) return true
-  // Construction cost pages have dark hero too
   if (pathname.startsWith('/construction-cost/')) return true
   return false
 }
@@ -33,28 +25,23 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
-    // Reset on route change
     setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [pathname])
 
-  useEffect(() => {
-    setIsMobileOpen(false)
-  }, [pathname])
+  useEffect(() => { setIsMobileOpen(false) }, [pathname])
 
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [isMobileOpen])
 
-  /*
-    Solid navy when:
-    - scrolled on any page
-    - mobile menu is open
-    - on a page that does NOT have a dark hero (e.g. /blog, /blog/[slug], category, tag pages)
-    Transparent only when: at the top of a page that has a dark-navy hero
-  */
+  // Fix: anchor links land below the fixed navbar
+  useEffect(() => {
+    document.documentElement.style.scrollPaddingTop = '80px'
+  }, [])
+
   const showSolid = isScrolled || isMobileOpen || !hasDarkHero
 
   return (
@@ -64,8 +51,8 @@ export default function Navbar() {
           showSolid ? 'py-3 shadow-lg' : 'py-4'
         }`}
         style={{
-          backgroundColor: showSolid ? 'rgba(11,15,59,0.97)' : 'transparent',
-          backdropFilter:   showSolid ? 'blur(14px)' : 'none',
+          backgroundColor:      showSolid ? 'rgba(11,15,59,0.97)' : 'transparent',
+          backdropFilter:       showSolid ? 'blur(14px)' : 'none',
           WebkitBackdropFilter: showSolid ? 'blur(14px)' : 'none',
           borderTop:    'none',
           borderBottom: 'none',
@@ -80,9 +67,7 @@ export default function Navbar() {
               <Image
                 src="/logo/logo.png"
                 alt="Saanidhya Builders logo"
-                width={600}
-                height={600}
-                priority
+                width={600} height={600} priority
                 style={{ height: '44px', width: '44px', objectFit: 'contain' }}
               />
             </div>
@@ -94,7 +79,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* ── Desktop Nav ── */}
           <ul className="hidden lg:flex items-center gap-0.5" role="list">
             {nav.mainNav.map((link) => {
               const isActive = link.href === '/'
@@ -122,8 +107,23 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center">
+          {/* ── Desktop CTAs ── */}
+          <div className="hidden lg:flex items-center gap-2">
+
+            {/* Earn With Us — orange outlined, visually distinct from Free Consultation */}
+            {/* <Link
+              href="/partner"
+              className="inline-flex items-center gap-1.5 font-montserrat font-bold text-xs px-4 py-2.5 rounded-xl border transition-all duration-200 hover:bg-orange/15"
+              style={{
+                color: '#FF6A1A',
+                borderColor: 'rgba(255,106,26,0.45)',
+                background: 'rgba(255,106,26,0.08)',
+              }}
+            >
+              <BadgeIndianRupee size={13} />
+              Earn With Us
+            </Link> */}
+
             <Link href="/contact" className="btn-primary text-sm px-5 py-2.5">
               Free Consultation
             </Link>
@@ -141,7 +141,7 @@ export default function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile menu */}
+        {/* ── Mobile menu ── */}
         <AnimatePresence>
           {isMobileOpen && (
             <motion.div
@@ -183,10 +183,35 @@ export default function Navbar() {
                       </motion.li>
                     )
                   })}
+
+                  {/* Partner — mobile */}
+                  <motion.li
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: nav.mainNav.length * 0.04, duration: 0.2 }}
+                  >
+                    <Link
+                      href="/partner"
+                      className="flex items-center gap-2.5 px-4 py-3 rounded-xl font-montserrat text-sm font-bold transition-all duration-200"
+                      style={{
+                        color: '#FF6A1A',
+                        background: 'rgba(255,106,26,0.08)',
+                        border: '1px solid rgba(255,106,26,0.25)',
+                      }}
+                      onClick={() => setIsMobileOpen(false)}
+                    >
+                      <BadgeIndianRupee size={15} className="flex-shrink-0" />
+                      Earn With Us — Partner Program
+                    </Link>
+                  </motion.li>
                 </ul>
+
                 <div className="mt-5 pt-5" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                  <Link href="/contact" className="btn-primary w-full justify-center text-sm"
-                    onClick={() => setIsMobileOpen(false)}>
+                  <Link
+                    href="/contact"
+                    className="btn-primary w-full justify-center text-sm"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
                     Get Free Consultation
                   </Link>
                 </div>
