@@ -190,7 +190,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: nav.mainNav.length * 0.04, duration: 0.2 }}
                   >
-                    <Link
+                    {/* <Link
                       href="/partner"
                       className="flex items-center gap-2.5 px-4 py-3 rounded-xl font-montserrat text-sm font-bold transition-all duration-200"
                       style={{
@@ -202,7 +202,7 @@ export default function Navbar() {
                     >
                       <BadgeIndianRupee size={15} className="flex-shrink-0" />
                       Earn With Us — Partner Program
-                    </Link>
+                    </Link> */}
                   </motion.li>
                 </ul>
 
