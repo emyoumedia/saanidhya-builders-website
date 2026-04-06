@@ -115,17 +115,18 @@ export default function FeaturedProjects() {
                 >
 
                   {/* Image */}
-                  <div className="relative h-44 w-full">
-  <Image
-    src={imageSrc}
-    alt={project.title}
-    fill
-    className="object-cover"
-    sizes="(max-width: 768px) 100vw, 
-           (max-width: 1200px) 50vw, 
-           33vw"
-  />
-</div>
+                  <div className="relative w-full aspect-[16/9]">
+              <Image
+              src={imageSrc}
+              alt={project.title}
+              fill
+              priority={i === 0}
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 
+                    (max-width: 1200px) 50vw, 
+                    33vw"
+            />
+          </div>
 
                   {/* Progress */}
                   <div

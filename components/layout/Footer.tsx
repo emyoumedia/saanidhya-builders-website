@@ -1,4 +1,6 @@
+'use client'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { Phone, Mail, Clock, MessageCircle, BadgeIndianRupee, ArrowRight } from 'lucide-react'
 import { company, navData as nav } from '@/data'
@@ -34,6 +36,21 @@ const socialIconClass =
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
 
 export default function Footer() {
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleServiceClick = (id: string) => {
+  sessionStorage.setItem('openServiceId', id)
+  if (pathname === '/services') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('openService', { detail: { id } }))
+    }, 400) // wait for scroll to finish
+  } else {
+    router.push('/services')
+  }
+}
+
   return (
     <footer className="bg-navy text-white">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -125,24 +142,26 @@ export default function Footer() {
             </div>
 
             {/* 2 — Services */}
-            <div>
-              <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Services</h3>
-              <ul className="space-y-2">
-                {[
-                  { href: '/residential-construction-coimbatore', label: 'Residential Construction' },
-                  { href: '/commercial-construction-coimbatore',  label: 'Commercial Construction'  },
-                  { href: '/construction-company-coimbatore',     label: 'House Construction'       },
-                  { href: '/builders-coimbatore',                 label: 'Turnkey Construction'     },
-                ].map(({ href, label }) => (
-                  <li key={href}>
-                    <Link href={href}
-                      className="text-xs text-white/60 hover:text-orange hover:translate-x-1 transition-all duration-200 inline-block">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+           <div>
+            <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Services</h3>
+            <ul className="space-y-2">
+              {[
+              { id: 'residential',        label: 'Residential Construction' },
+              { id: 'commercial',         label: 'Commercial Construction'  },
+              { id: 'house-construction', label: 'House Construction'       },
+              { id: 'turnkey',            label: 'Turnkey Construction'     },
+            ].map(({ id, label }) => (
+              <li key={id}>
+                <button
+                  onClick={() => handleServiceClick(id)}
+                  className="text-xs text-white/60 hover:text-orange hover:translate-x-1 transition-all duration-200 inline-block text-left"
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+            </ul>
+          </div>
 
             {/* 3 — Locations */}
             <div>

@@ -4,6 +4,8 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/ui/FloatingButtons'
+import ScrollToTop from '@/components/ScrollToTop'
+import ProgressBar from '@/components/ProgressBar'
 import company from '@/data/company.json'
 import { headers } from 'next/headers'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
@@ -163,6 +165,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
            <body>
+          <ProgressBar />
+          <ScrollToTop />
           <GoogleAnalytics />
           <MetaPixel />
           <AnalyticsTracker />

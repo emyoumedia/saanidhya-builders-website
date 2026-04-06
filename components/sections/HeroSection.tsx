@@ -17,7 +17,7 @@ function shuffleArray(arr: any[]) {
   return [...arr].sort(() => Math.random() - 0.5)
 }
 
-const MAX_SLIDES = 5
+const MAX_SLIDES = 3
 const ENABLE_RANDOM = true
 
 const featuredServices = servicesData.filter((s: any) => s.featured)
@@ -29,7 +29,8 @@ export const SLIDES = sorted.slice(0, MAX_SLIDES).map((s: any) => ({
   image: s.image,
   service: s.title,
   tagline: s.tagline,
-  slug: `/services/${s.slug}`,
+  slug: `/services`,
+  serviceId: s.id,
 }))
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -90,15 +91,16 @@ useEffect(() => {
               transition={{ duration: 1.2, ease: 'easeInOut' }}
               className="absolute inset-0">
               <Image 
-                src={current.bg} 
-                alt={current.bgAlt}
-                fill 
-                priority
-                sizes="100vw" 
-                quality={60}
-                className="object-cover object-center" 
-                style={{ opacity: 0.18 }} 
-              />
+              src={current.bg} 
+              alt={current.bgAlt}
+              fill 
+              priority={slide === 0}
+              loading={slide === 0 ? "eager" : "lazy"}
+              sizes="100vw" 
+              quality={60}
+              className="object-cover object-center" 
+              style={{ opacity: 0.18 }} 
+                />
             </m.div>
           </AnimatePresence>
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(115deg,rgba(11,15,59,0.97) 0%,rgba(11,15,59,0.85) 50%,rgba(11,15,59,0.55) 100%)' }} />
@@ -248,15 +250,16 @@ useEffect(() => {
                     exit={{ opacity: 0, scale: 1.02 }}
                     transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <Link href={current.slug} className="group block">
+                    <Link href={current.slug} className="group block" onClick={() => sessionStorage.setItem('openServiceId', current.serviceId)}>
                       {/* Main image */}
                       <div className="relative rounded-2xl overflow-hidden mb-3 shadow-2xl"
                         style={{ height: 'clamp(220px,35vw,340px)' }}>
-                        <Image
-                          src={current.image} alt={current.service}
-                          fill sizes="(max-width: 1024px) 100vw, 50vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
+                     <Image
+                      src={current.image} alt={current.service}
+                      fill sizes="(max-width: 1024px) 100vw, 50vw"
+                      priority={slide === 0}
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(11,15,59,0.88) 0%,rgba(11,15,59,0.15) 55%,transparent 100%)' }} />
 
                         {/* Service label */}
@@ -300,7 +303,15 @@ useEffect(() => {
                             style={{ height: i === slide ? '52px' : '44px', opacity: i === slide ? 1 : 0.45 }}
                             aria-label={s.service}
                           >
-                            <Image src={s.image} alt={s.service} fill className="object-cover" sizes="25vw" />
+                            <Image 
+                          src={s.image} 
+                          alt={s.service} 
+                          fill 
+                          sizes="25vw"
+                          loading="lazy"
+                          quality={50}
+                          className="object-cover"
+                           />
                             <div style={{ position: 'absolute', inset: 0, background: i === slide ? 'rgba(11,15,59,0.35)' : 'rgba(11,15,59,0.55)' }} />
                             {i === slide && (
                               <div className="absolute bottom-0 left-0 right-0 h-0.5" style={{ background: GRAD }} />

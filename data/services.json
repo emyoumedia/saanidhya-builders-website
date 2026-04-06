@@ -1,6 +1,7 @@
 [
   {
     "id": "residential",
+    "category": "Construction",
     "icon": "Home",
     "title": "Residential Construction",
     "slug": "residential-construction-coimbatore",
@@ -14,7 +15,7 @@
       "Warranty coverage included",
       "All permits handled"
     ],
-    "image": "/images/services/residential_construction.webp",
+    "image": "/images/services/residential.webp",
     "imageAlt": "Residential construction in Coimbatore by Saanidhya Builders",
     "color": "#7A2EFF",
     "featured": true,
@@ -22,6 +23,7 @@
   },
   {
     "id": "commercial",
+    "category": "Construction",
     "icon": "Building2",
     "title": "Commercial Construction",
     "slug": "commercial-construction-coimbatore",
@@ -43,6 +45,7 @@
   },
   {
     "id": "turnkey",
+    "category": "Construction",
     "icon": "Key",
     "title": "Turnkey Construction",
     "slug": "turnkey-construction-coimbatore",
@@ -64,6 +67,7 @@
   },
   {
     "id": "house-construction",
+    "category": "Construction",
     "icon": "HousePlus",
     "title": "House Construction",
     "slug": "house-construction-coimbatore",
@@ -85,6 +89,7 @@
   },
   {
     "id": "villa-construction",
+    "category": "Construction",
     "icon": "Castle",
     "title": "Villa Construction",
     "slug": "villa-constructio-coimbatore",
@@ -106,6 +111,7 @@
   },
   {
     "id": "renovation",
+    "category": "Renovation",
     "icon": "Hammer",
     "title": "Building Renovation",
     "slug": "building-renovation-coimbatore",
@@ -126,7 +132,30 @@
     "priority": 1
   },
   {
+    "id": "interior-design",
+    "category": "Renovation",
+    "icon": "Sofa",
+    "title": "Interior Design",
+    "slug": "interior-design-coimbatore",
+    "tagline": "Connecting you with the right interior talent",
+    "description": "We connect you with trusted interior design specialists in Coimbatore and coordinate the entire process on your behalf — from modular kitchens and wardrobes to false ceilings, lighting, and flooring. You get quality results without managing multiple vendors.",
+    "shortDesc": "We coordinate trusted interior specialists for homes and commercial spaces — kitchens, wardrobes, ceilings, flooring & lighting.",
+    "benefits": [
+      "Modular kitchen design",
+      "Custom wardrobes",
+      "False ceiling & lighting",
+      "Flooring selection",
+      "Complete furnishing"
+    ],
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+    "imageAlt": "Interior design services Coimbatore by Saanidhya Builders",
+    "color": "#7A2EFF",
+    "featured": false,
+    "priority": 1
+  },
+  {
     "id": "architectural-planning",
+    "category": "Design",
     "icon": "Palette",
     "title": "Architectural Planning",
     "slug": "architectural-planning-coimbatore",
@@ -148,6 +177,7 @@
   },
   {
     "id": "building-design",
+    "category": "Design",
     "icon": "LayoutDashboard",
     "title": "Building Design",
     "slug": "building-design-coimbatore",
@@ -167,29 +197,10 @@
     "featured": false,
     "priority": 1
   },
-  {
-    "id": "interior-design",
-    "icon": "Sofa",
-    "title": "Interior Design",
-    "slug": "interior-design-coimbatore",
-    "tagline": "Connecting you with the right interior talent",
-    "description": "We connect you with trusted interior design specialists in Coimbatore and coordinate the entire process on your behalf — from modular kitchens and wardrobes to false ceilings, lighting, and flooring. You get quality results without managing multiple vendors.",
-    "shortDesc": "We coordinate trusted interior specialists for homes and commercial spaces — kitchens, wardrobes, ceilings, flooring & lighting.",
-    "benefits": [
-      "Modular kitchen design",
-      "Custom wardrobes",
-      "False ceiling & lighting",
-      "Flooring selection",
-      "Complete furnishing"
-    ],
-    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-    "imageAlt": "Interior design services Coimbatore by Saanidhya Builders",
-    "color": "#7A2EFF",
-    "featured": false,
-    "priority": 1
-  },
+  
   {
     "id": "interior-renovation",
+    "category": "Design",
     "icon": "PaintBucket",
     "title": "Interior Renovation",
     "slug": "interior-renovation-coimbatore",
