@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { company, servicesData } from '@/data'
 import { trackEvent } from '@/lib/tracking'
+import { trackServerEvent } from '@/lib/serverTracking'
 
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
 
@@ -30,53 +31,56 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-  
-try {
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(form),
-  });
+  e.preventDefault()
+  setLoading(true)
 
-  const data = await res.json();
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    })
 
-  if (!res.ok) {
-    // ❗ Track failure
-    trackEvent('form_error', {
-      event_category: 'error',
-      event_label: 'Contact Form Failed',
-      message: data.error || 'Server error',
-    });
+    const data = await res.json()
 
-    throw new Error(data.error || "Server error");
-  }
-
-  // ✅ Track success (REAL LEAD)
-      trackEvent('form_submit', {
-        event_category: 'lead',
-        event_label: 'Contact Form',
-        page: window.location.pathname,
-      });
-
-      setSubmitted(true);
-
-    } catch (err) {
-      console.error("Submission error:", err);
-
-      // ❗ Network / unexpected error tracking
+    if (!res.ok) {
       trackEvent('form_error', {
         event_category: 'error',
-        event_label: 'Contact Form Exception',
-      });
+        event_label: 'Contact Form Failed',
+        message: data.error || 'Server error',
+      })
+      throw new Error(data.error || 'Server error')
+    }
 
-      alert("Something went wrong. Please try WhatsApp or call us directly.");
-    } finally {
-          setLoading(false);
-        }
-  };
- 
+    // ✅ GA tracking (existing)
+    trackEvent('form_submit', {
+      event_category: 'lead',
+      event_label: 'Contact Form',
+      page: window.location.pathname,
+    })
+
+    // ✅ Meta CAPI (new — fires both Pixel + server)
+    await trackServerEvent(
+      'Lead',
+      { phone: form.phone, email: form.email },
+      { value: 0, currency: 'INR' }
+    )
+
+    setSubmitted(true)
+
+  } catch (err) {
+    console.error('Submission error:', err)
+
+    trackEvent('form_error', {
+      event_category: 'error',
+      event_label: 'Contact Form Exception',
+    })
+
+    alert('Something went wrong. Please try WhatsApp or call us directly.')
+  } finally {
+    setLoading(false)
+  }
+}
 // NOTE: fetch to Apps Script always resolves (even on script error) because of
 // the CORS opaque response. try/catch only catches network failures.
 // Script errors are visible in the Apps Script execution log.

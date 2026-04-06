@@ -1,4 +1,4 @@
-export const trackEvent = (eventName: string, data?: any) => {
+export const trackEvent = (eventName: string, data?: Record<string, string | number | boolean>) => {
   if (typeof window === 'undefined') return
 
   if (window.gtag) {
