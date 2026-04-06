@@ -99,6 +99,10 @@ export default function FAQPage() {
                 href={`tel:${company.contact.phoneRaw}`}
                 className="inline-flex items-center gap-2 btn-primary text-sm"
               >
+                <a
+                href={`tel:${company.contact.phoneRaw2}`}
+                className="inline-flex items-center gap-2 btn-primary text-sm"
+              ></a>
                 <Phone size={14} /> {company.contact.phoneDisplay}
               </a>
               <a

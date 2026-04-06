@@ -163,7 +163,7 @@ export default function Footer() {
             </ul>
           </div>
 
-            {/* 3 — Locations */}
+            {/* 3 - Pages*/}
             <div>
               <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Pages</h3>
               <ul className="space-y-2">
@@ -199,10 +199,15 @@ export default function Footer() {
               <h3 className="text-xs uppercase text-white/60 mb-4 tracking-wider">Contact</h3>
               <div className="space-y-3 text-xs">
                 <a href={`tel:${company.contact.phoneRaw}`}
-                  className="flex items-center gap-2 text-white/70 hover:text-orange transition-colors">
-                  <Phone size={12} />
-                  {company.contact.phoneDisplay}
-                </a>
+  className="flex items-center gap-2 text-white/70 hover:text-orange transition-colors">
+  <Phone size={12} />
+  {company.contact.phoneDisplay}
+</a>
+<a href={`tel:${company.contact.phoneRaw2}`}
+  className="flex items-center gap-2 text-white/70 hover:text-orange transition-colors">
+  <Phone size={12} />
+  {company.contact.phoneDisplay2}
+</a>
                 <a href={company.contact.whatsappLink} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/70 hover:text-green-400 transition-colors">
                   <MessageCircle size={12} />

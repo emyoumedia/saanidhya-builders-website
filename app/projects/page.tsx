@@ -235,7 +235,7 @@ export default function ProjectsPage() {
                 for Themselves
               </h1>
               <p className="font-montserrat text-white/55 text-base md:text-lg leading-relaxed">
-                Every structure we build is a testament to our craft — documented from foundation to finish.
+                Every project reflects our quality, from foundation to final finish.
               </p>
             </div>
 

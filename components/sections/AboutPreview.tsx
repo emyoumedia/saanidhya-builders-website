@@ -62,26 +62,6 @@ export default function AboutPreview() {
             <p className="font-montserrat text-navy/60 leading-relaxed mb-4 text-sm sm:text-base">
               {company.shortDescription}
             </p>
-            {/* Leadership names — key trust signal */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              {[
-                { name: company.leadership.business.name, role: company.leadership.business.title },
-                { name: company.leadership.execution.name, role: company.leadership.execution.title },
-              ].map(({ name, role }) => (
-                <div key={name} className="flex items-center gap-3 bg-navy/4 border border-navy/8 rounded-xl px-4 py-3 flex-1">
-                  <div
-                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 font-playfair font-bold text-white text-sm"
-                    style={{ background: GRAD }}
-                  >
-                    {name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
-                  </div>
-                  <div>
-                    <p className="font-montserrat font-semibold text-navy text-xs">{name}</p>
-                    <p className="font-montserrat text-navy/45 text-[10px] leading-snug">{role.split('&')[0].trim()}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 font-montserrat font-bold text-sm text-white px-6 py-3 rounded-xl transition-opacity hover:opacity-90"

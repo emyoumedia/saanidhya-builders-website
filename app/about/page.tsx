@@ -21,7 +21,6 @@ const iconMap: Record<string, React.ElementType> = {
 
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
 
-// Initials from name
 const initials = (name: string) =>
   name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
 
@@ -101,7 +100,6 @@ export default function AboutPage() {
                   fill className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                {/* Years badge */}
                 <div className="absolute bottom-5 left-5 bg-navy rounded-xl px-5 py-3 flex items-center gap-3">
                   <span
                     className="font-playfair font-bold text-2xl leading-none"
@@ -129,8 +127,6 @@ export default function AboutPage() {
                   {para}
                 </p>
               ))}
-
-              {/* Key stats */}
               <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-navy/8">
                 {[
                   { value: company.stats.projectsCompleted, label: 'Projects Done' },
@@ -171,47 +167,91 @@ export default function AboutPage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-8">
             {team.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.1}>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-orange/25 transition-colors duration-300 h-full">
+                <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-orange/25 transition-colors duration-300 h-full flex flex-col">
 
-                  {/* Avatar + name */}
-                  <div className="flex items-center gap-4 mb-5">
-                    <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 font-playfair font-bold text-white text-lg shadow-lg"
-                      style={{ background: GRAD }}
-                    >
-                      {initials(member.name)}
-                    </div>
-                    <div>
-                      <h3 className="font-playfair font-bold text-white text-lg leading-tight">
+                  {/* ── Photo block ── */}
+                  <div className="relative w-full" style={{ height: '320px' }}>
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.imageAlt || member.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    ) : (
+                      /* Fallback: large gradient initials block */
+                      <div
+                        className="w-full h-full flex items-center justify-center"
+                        style={{ background: GRAD }}
+                      >
+                        <span className="font-playfair font-bold text-white text-6xl select-none">
+                          {initials(member.name)}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Dark gradient fade at bottom so name reads clearly */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
+
+                    {/* Name + role overlaid at bottom of photo */}
+                    <div className="absolute bottom-0 left-0 right-0 px-6 pb-5">
+                      <h3 className="font-playfair font-bold text-white text-xl leading-tight">
                         {member.name}
                       </h3>
-                      <p className="font-montserrat text-orange text-xs font-semibold mt-0.5">
+                      <p className="font-montserrat text-orange text-xs font-semibold mt-1 uppercase tracking-wider">
                         {member.shortRole}
                       </p>
                     </div>
+
+                    {/* Experience badge — top-right corner */}
+                    <div className="absolute top-4 right-4 bg-navy/80 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1">
+                      <span className="font-montserrat text-white/70 text-[10px] font-medium">
+                        {member.experience}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Bio */}
-                  <p className="font-montserrat text-white/55 text-sm leading-relaxed mb-5">
-                    {member.bio}
-                  </p>
-
-                  {/* Responsibilities */}
-                  <div>
-                    <p className="font-montserrat text-white/30 text-[10px] uppercase tracking-widest mb-3">
-                      Responsibilities
+                  {/* ── Text content ── */}
+                  <div className="p-7 flex flex-col flex-1">
+                    {/* Bio */}
+                    <p className="font-montserrat text-white/55 text-sm leading-relaxed mb-6">
+                      {member.bio}
                     </p>
-                    <ul className="space-y-1.5">
-                      {member.responsibilities.map(r => (
-                        <li key={r} className="flex items-center gap-2 font-montserrat text-xs text-white/60">
-                          <span className="w-1 h-1 rounded-full bg-orange flex-shrink-0" />
-                          {r}
-                        </li>
-                      ))}
-                    </ul>
+
+                    {/* Responsibilities */}
+                    <div className="mt-auto">
+                      <p className="font-montserrat text-white/30 text-[10px] uppercase tracking-widest mb-3">
+                        Responsibilities
+                      </p>
+                      <ul className="space-y-2">
+                        {member.responsibilities.map(r => (
+                          <li key={r} className="flex items-start gap-2.5 font-montserrat text-xs text-white/60">
+                            <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0 mt-1" />
+                            {r}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* LinkedIn link (if available) */}
+                    {member.linkedin && (
+                      <Link
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex items-center gap-2 font-montserrat text-xs text-white/40 hover:text-orange transition-colors duration-200"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                          <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        LinkedIn Profile
+                      </Link>
+                    )}
                   </div>
 
                 </div>

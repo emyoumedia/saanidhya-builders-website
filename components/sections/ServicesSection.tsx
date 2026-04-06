@@ -8,9 +8,11 @@ const iconMap: Record<string, React.ElementType> = {
 }
 
 type Service = {
-  id: string; icon: string; title: string; slug: string
+  id: string; icon: string; title: string;
   tagline: string; description: string; shortDesc: string
-  benefits: string[]; image: string; imageAlt: string; color: string
+  benefits: string[]; image: string; imageAlt: string; color: string,
+  slug: `/services`,
+  serviceId: String,
 }
 
 const GRAD = 'linear-gradient(135deg,#7A2EFF 0%,#FF6A1A 100%)'
@@ -44,7 +46,7 @@ export default function ServicesSection() {
             const Icon = iconMap[service.icon] || Home
             return (
               <AnimatedSection key={service.id} delay={i * 0.07}>
-                <Link href={`/services/${service.slug}`}
+                <Link href={`/services`}
                   className="group flex flex-col items-start gap-4 p-6 rounded-2xl border border-white/8 hover:border-orange/30 bg-white/4 hover:bg-white/7 transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg"
                     style={{ background: GRAD }}>

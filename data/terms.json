@@ -7,7 +7,7 @@
   {
     "id": "services",
     "title": "2. Our Services",
-    "body": "Saanidhya Builders provides residential construction, commercial construction, architectural design, turnkey project management, renovation and remodeling services in Coimbatore and surrounding areas of Tamil Nadu.\n\nInformation on our website about services, pricing, timelines, and specifications is provided for general guidance only. Actual project scope, cost, and timelines are determined through formal consultation, site assessment, and written agreements signed between both parties.\n\nWe reserve the right to refuse service to anyone for any reason at our sole discretion."
+    "body": "Saanidhya Builders provides residential construction, commercial construction, architectural design, turnkey project management, renovation and remodeling services in Coimbatore and surrounding areas of Tamil Nadu.\n\nInformation on our website about services, pricing, timelines, and specifications is provided for general guidance only and may be subject to change without prior notice. Actual project scope, cost, and timelines are determined through formal consultation, site assessment, and written agreements signed between both parties.\n\nWe reserve the right to refuse service to anyone for any reason at our sole discretion."
   },
   {
     "id": "quotations",
@@ -22,46 +22,51 @@
   {
     "id": "intellectual-property",
     "title": "5. Intellectual Property",
-    "body": "All content on this website — including but not limited to text, graphics, logos, images, architectural drawings, design concepts, and software — is the property of Saanidhya Builders or its content suppliers and is protected under Indian copyright law and applicable international treaties.\n\nYou may not reproduce, distribute, modify, create derivative works from, publicly display, or exploit any content from this website without our prior written consent.\n\nArchitectural designs and drawings prepared by our team for your project remain the intellectual property of Saanidhya Builders until full and final payment is received for the relevant design services."
+    "body": "All content on this website — including but not limited to text, graphics, logos, images, architectural drawings, design concepts, and software — is the property of Saanidhya Builders or its content suppliers and is protected under Indian copyright law.\n\nYou may not reproduce, distribute, modify, create derivative works from, publicly display, or exploit any content from this website without our prior written consent.\n\nArchitectural designs and drawings prepared by our team remain our intellectual property until full payment is received."
   },
   {
     "id": "website-use",
     "title": "6. Acceptable Use of Website",
-    "body": "When using our website, you agree not to:\n\n• Use the site for any unlawful purpose or in violation of any applicable laws\n• Attempt to gain unauthorised access to any part of the website or our systems\n• Transmit any harmful, offensive, defamatory, or spam content through our contact forms\n• Scrape, crawl, or systematically extract data from our website without permission\n• Impersonate any person or entity or misrepresent your affiliation with any person or entity\n• Interfere with or disrupt the integrity or performance of the website\n\nWe reserve the right to terminate access for any user who violates these terms."
+    "body": "When using our website, you agree not to:\n\n• Use the site for any unlawful purpose\n• Attempt unauthorised access\n• Send harmful or spam content\n• Scrape or extract data\n• Impersonate others\n• Disrupt website performance\n\nWe reserve the right to restrict access if these terms are violated."
   },
   {
     "id": "warranties",
     "title": "7. Warranties & Construction Guarantee",
-    "body": "Saanidhya Builders provides warranties on completed construction work as specified in your project contract. These warranties cover defects arising from materials or workmanship under normal use conditions. They do not cover:\n\n• Damage caused by misuse, negligence, or modifications made without our written approval\n• Damage resulting from natural disasters, acts of God, or force majeure events\n• Normal wear and tear\n\nWarranty periods vary based on materials, brands, and site conditions. Exact terms are outlined in your project contract. Warranty claims must be submitted in writing within the warranty period."
+    "body": "We provide warranties as specified in project contracts. These cover defects in materials or workmanship under normal use and exclude misuse, unauthorised modifications, natural disasters, and normal wear and tear.\n\nExact warranty terms are defined in the project agreement."
   },
   {
     "id": "liability",
     "title": "8. Limitation of Liability",
-    "body": "To the maximum extent permitted by applicable Indian law, Saanidhya Builders shall not be liable for:\n\n• Any indirect, incidental, consequential, or punitive damages arising from your use of our website\n• Errors or inaccuracies in website content (construction timelines, costs, or specifications shown on the website are illustrative and subject to formal agreement)\n• Delays in construction caused by factors beyond our reasonable control, including regulatory delays, extreme weather, material supply disruptions, or labour disputes\n• Loss of data or business interruption arising from website downtime\n\nOur total liability under any construction contract shall not exceed the total value of the contract unless otherwise required by law."
+    "body": "To the maximum extent permitted by Indian law, Saanidhya Builders shall not be liable for indirect or consequential damages, inaccuracies in website content, project delays beyond our control, or website downtime.\n\nTotal liability shall not exceed the contract value unless required by law."
   },
   {
     "id": "force-majeure",
     "title": "9. Force Majeure",
-    "body": "Neither party shall be liable for delays or failure to perform obligations under a construction contract caused by events beyond reasonable control, including but not limited to:\n\n• Natural disasters (floods, earthquakes, cyclones)\n• Government-declared emergencies or lockdowns\n• Strikes or labour disputes not involving our workforce\n• Material shortages due to national or global supply chain disruption\n• Acts of war, terrorism, or civil unrest\n\nIn such circumstances, we will notify you as soon as reasonably practicable and work together to reschedule affected milestones."
+    "body": "We are not liable for delays due to events beyond control such as natural disasters, government actions, supply disruptions, or unrest. Affected timelines will be adjusted accordingly."
   },
   {
     "id": "dispute",
     "title": "10. Dispute Resolution",
-    "body": "In the event of any dispute arising from our services or these Terms, both parties agree to first attempt resolution through good-faith negotiation within 30 days of the dispute arising.\n\nIf negotiation fails, disputes shall be referred to arbitration in accordance with the Arbitration and Conciliation Act, 1996 (India). The arbitration shall be conducted in Coimbatore, Tamil Nadu, in the English language. The arbitrator's decision shall be final and binding.\n\nFor website-related disputes, the courts of Coimbatore, Tamil Nadu shall have exclusive jurisdiction."
+    "body": "Disputes will first be attempted to resolve through negotiation. If unresolved, they will be referred to arbitration under Indian law in Coimbatore, Tamil Nadu. Courts in Coimbatore shall have jurisdiction."
   },
   {
     "id": "governing-law",
     "title": "11. Governing Law",
-    "body": "These Terms of Service are governed by and construed in accordance with the laws of India, including the Indian Contract Act, 1872, the Consumer Protection Act, 2019, and other applicable legislation. The Real Estate (Regulation and Development) Act, 2016 (RERA) applies to applicable real estate projects.\n\nAny legal action or proceeding arising from these Terms shall be brought exclusively in the courts of Coimbatore, Tamil Nadu, India."
+    "body": "These Terms are governed by the laws of India. Legal proceedings shall be handled in Coimbatore courts."
   },
   {
     "id": "privacy",
     "title": "12. Privacy",
-    "body": "Your use of our website and services is also governed by our Privacy Policy, which is incorporated into these Terms by reference. Please review our Privacy Policy at www.saanidhyabuilders.com/privacy to understand our practices regarding the collection and use of your personal information."
+    "body": "Your use of our website is also governed by our Privacy Policy."
   },
   {
     "id": "contact",
     "title": "13. Contact Information",
-    "body": "For questions about these Terms of Service or our services, please contact us during office hours: Monday – Saturday, 9:00 AM – 6:00 PM IST."
+    "body": "For questions, contact us during business hours."
+  },
+  {
+    "id": "content-accuracy",
+    "title": "14. Website Content Accuracy",
+    "body": "We strive to ensure that all information on our website is accurate and up to date. However, errors, omissions, or outdated information may occur.\n\nAll content, including services, pricing, timelines, images, and specifications, is provided for general informational purposes only and should not be considered a binding representation.\n\nUsers are advised to contact us directly to verify important details before making decisions."
   }
 ]

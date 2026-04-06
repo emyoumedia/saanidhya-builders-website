@@ -98,7 +98,7 @@ export default function SitemapPage() {
         </Section>
 
         {/* Local SEO */}
-        <Section title="Construction Services" count={4}>
+        {/* <Section title="Construction Services" count={4}>
           {([
             { href: '/construction-company-coimbatore',     label: 'Construction Company — Coimbatore'     },
             { href: '/builders-coimbatore',                 label: 'Builders in Coimbatore'                },
@@ -107,7 +107,7 @@ export default function SitemapPage() {
           ] as ItemProps[]).map((item) => (
             <Item key={item.href} {...item} />
           ))}
-        </Section>
+        </Section> */}
 
         {/* Blog Posts */}
         {posts.length > 0 && (
@@ -149,7 +149,7 @@ export default function SitemapPage() {
         )}
 
         {/* Cities */}
-        {cityNames.length > 0 && (
+        {/* {cityNames.length > 0 && (
           <Section title="Construction Cost by City" count={cityNames.length}>
             {cityNames.map((city) => (
               <Item
@@ -159,7 +159,7 @@ export default function SitemapPage() {
               />
             ))}
           </Section>
-        )}
+        )} */}
 
       </div>
     </main>

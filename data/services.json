@@ -15,7 +15,7 @@
       "Warranty coverage included",
       "All permits handled"
     ],
-    "image": "/images/services/residential.webp",
+    "image": "/images/services/residential-construction-coimbatore.webp",
     "imageAlt": "Residential construction in Coimbatore by Saanidhya Builders",
     "color": "#7A2EFF",
     "featured": true,
@@ -37,7 +37,7 @@
       "Transparent cost reporting",
       "On-time delivery"
     ],
-    "image": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    "image": "/images/services/commercial-construction-coimbatore.webp",
     "imageAlt": "Commercial construction Coimbatore by Saanidhya Builders",
     "color": "#FF6A1A",
     "featured": true,
@@ -59,7 +59,7 @@
       "Quality control at every stage",
       "Move-in ready delivery"
     ],
-    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+    "image": "/images/services/turnkey-construction-coimbatore.webp",
     "imageAlt": "Turnkey construction services Coimbatore",
     "color": "#7A2EFF",
     "featured": true,
@@ -81,7 +81,7 @@
       "Transparent pricing",
       "On-time delivery"
     ],
-    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    "image": "/images/services/house-construction-coimbatore.webp",
     "imageAlt": "House construction in Coimbatore by Saanidhya Builders",
     "color": "#FF6A1A",
     "featured": true,
@@ -103,7 +103,7 @@
       "Landscaping & garden design",
       "Warranty coverage included"
     ],
-    "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
+    "image": "/images/services/villa-construction-coimbatore.webp",
     "imageAlt": "Villa construction Coimbatore by Saanidhya Builders",
     "color": "#7A2EFF",
     "featured": false,
@@ -125,34 +125,34 @@
       "Budget-friendly options",
       "Quick turnaround"
     ],
-    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    "image": "/images/services/building-renovation-coimbatore.webp",
     "imageAlt": "Building renovation services Coimbatore",
     "color": "#FF6A1A",
     "featured": false,
     "priority": 1
   },
-  {
-    "id": "interior-design",
-    "category": "Renovation",
-    "icon": "Sofa",
-    "title": "Interior Design",
-    "slug": "interior-design-coimbatore",
-    "tagline": "Connecting you with the right interior talent",
-    "description": "We connect you with trusted interior design specialists in Coimbatore and coordinate the entire process on your behalf — from modular kitchens and wardrobes to false ceilings, lighting, and flooring. You get quality results without managing multiple vendors.",
-    "shortDesc": "We coordinate trusted interior specialists for homes and commercial spaces — kitchens, wardrobes, ceilings, flooring & lighting.",
-    "benefits": [
-      "Modular kitchen design",
-      "Custom wardrobes",
-      "False ceiling & lighting",
-      "Flooring selection",
-      "Complete furnishing"
-    ],
-    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-    "imageAlt": "Interior design services Coimbatore by Saanidhya Builders",
-    "color": "#7A2EFF",
-    "featured": false,
-    "priority": 1
-  },
+ {
+  "id": "interior-design",
+  "category": "Renovation",
+  "icon": "Sofa",
+  "title": "Interior Execution & Coordination",
+  "slug": "interior-work-coimbatore",
+  "tagline": "We handle interiors through trusted professionals",
+  "description": "We don’t claim to be interior design experts — but we make the process simple for you. We connect you with reliable interior designers and skilled contractors, and coordinate the entire execution from start to finish. Whether it’s modular kitchens, wardrobes, ceilings, or complete furnishing, we ensure the work gets done smoothly without you dealing with multiple vendors.",
+  "shortDesc": "We connect, coordinate, and execute interior work through trusted designers and contractors.",
+  "benefits": [
+    "Access to trusted interior designers",
+    "Execution handled by experienced contractors",
+    "Single point of coordination",
+    "No need to manage multiple vendors",
+    "End-to-end interior execution support"
+  ],
+  "image": "/images/services/interior-design-coimbatore.webp",
+  "imageAlt": "Interior work and execution services in Coimbatore",
+  "color": "#7A2EFF",
+  "featured": false,
+  "priority": 1
+},
   {
     "id": "architectural-planning",
     "category": "Design",
@@ -169,7 +169,7 @@
       "DTCP/CMDA approvals",
       "Regulatory compliance"
     ],
-    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    "image": "/images/services/architectural-planning-coimbatore.webp",
     "imageAlt": "Architectural planning services Coimbatore",
     "color": "#7A2EFF",
     "featured": false,
@@ -191,7 +191,7 @@
       "3D visualisation",
       "Interior layout design"
     ],
-    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
+    "image": "/images/services/building-design-coimbatore.webp",
     "imageAlt": "Building design services Coimbatore",
     "color": "#FF6A1A",
     "featured": false,
@@ -214,7 +214,7 @@
       "False ceiling & lighting",
       "Interior painting"
     ],
-    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+    "image": "/images/services/interior-renovation-coimbatore.webp",
     "imageAlt": "Interior renovation services Coimbatore",
     "color": "#FF6A1A",
     "featured": false,

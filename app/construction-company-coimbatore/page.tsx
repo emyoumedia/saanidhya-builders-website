@@ -91,9 +91,12 @@ export default function ConstructionCostPage({ params }: Props) {
                   <Link href="/contact" className="btn-primary text-sm">
                     Get Free Estimate <ArrowRight size={15} />
                   </Link>
-                  <a href={`tel:${company.contact.phoneRaw}`} className="btn-secondary text-sm">
-                    <Phone size={15} /> Call Now
-                  </a>
+                 <a href={`tel:${company.contact.phoneRaw}`} className="btn-secondary text-sm">
+  <Phone size={15} /> {company.contact.phoneDisplay}
+</a>
+<a href={`tel:${company.contact.phoneRaw2}`} className="btn-secondary text-sm">
+  <Phone size={15} /> {company.contact.phoneDisplay2}
+</a>
                 </div>
               </div>
 
@@ -306,9 +309,15 @@ export default function ConstructionCostPage({ params }: Props) {
                 Get Free Consultation <ArrowRight size={15} />
               </Link>
               <a href={`tel:${company.contact.phoneRaw}`}
-                className="border-2 border-white text-white font-montserrat font-semibold text-sm px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-flex items-center gap-2">
-                <Phone size={15} /> {company.contact.phone}
-              </a>
+  className="border-2 border-white text-white font-montserrat font-semibold text-sm
+    px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+  <Phone size={15} /> {company.contact.phoneDisplay}
+</a>
+<a href={`tel:${company.contact.phoneRaw2}`}
+  className="border-2 border-white text-white font-montserrat font-semibold text-sm
+    px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+  <Phone size={15} /> {company.contact.phoneDisplay2}
+</a>
             </div>
           </div>
         </section>
