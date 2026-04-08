@@ -17,6 +17,10 @@ declare module 'facebook-nodejs-business-sdk' {
   }
 
   export class UserData {
+    setFbc: any;
+    setFbp(fbp: any) {
+      throw new Error('Method not implemented.');
+    }
     setClientIpAddress(ip: string): this
     setClientUserAgent(ua: string): this
     setPhone(phone: string): this

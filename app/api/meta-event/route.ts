@@ -13,11 +13,14 @@ const TEST_CODE = process.env.META_TEST_EVENT_CODE
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { eventName, eventId, userData, customData } = body
+    const { eventName, eventId, userData, customData, fbc, fbp } = body
 
     const user = new UserData()
-      .setClientIpAddress(req.headers.get('x-forwarded-for') || '')
-      .setClientUserAgent(req.headers.get('user-agent') || '')
+  .setClientIpAddress(req.headers.get('x-forwarded-for') || '')
+  .setClientUserAgent(req.headers.get('user-agent') || '')
+
+  if (fbc) user.setFbc(fbc)
+  if (fbp) user.setFbp(fbp)
 
     if (userData?.phone) user.setPhone(userData.phone)
     if (userData?.email) user.setEmail(userData.email)
