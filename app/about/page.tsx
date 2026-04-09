@@ -228,7 +228,7 @@ export default function AboutPage() {
                         Responsibilities
                       </p>
                       <ul className="space-y-2">
-                        {member.responsibilities.map(r => (
+                        {member.responsibilities.map((r: string) => (
                           <li key={r} className="flex items-start gap-2.5 font-montserrat text-xs text-white/60">
                             <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0 mt-1" />
                             {r}
