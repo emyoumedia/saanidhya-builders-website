@@ -15,18 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/process`,      lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/testimonials`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/contact`,      lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/blog`,         lastModified: now, changeFrequency: 'daily',   priority: 0.9 },
-    { url: `${BASE}/faq`,           lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/blog`,         lastModified: now, changeFrequency: 'weekly',   priority: 0.9 },
+    // { url: `${BASE}/faq`,           lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/privacy`,        lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE}/terms`,          lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
   ]
 
-  // const localSeoRoutes: MetadataRoute.Sitemap = [
-  //   { url: `${BASE}/construction-company-coimbatore`,     lastModified: now, changeFrequency: 'monthly', priority: 0.95 },
-  //   { url: `${BASE}/builders-coimbatore`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.95 },
-  //   { url: `${BASE}/residential-construction-coimbatore`, lastModified: now, changeFrequency: 'monthly', priority: 0.9  },
-  //   { url: `${BASE}/commercial-construction-coimbatore`,  lastModified: now, changeFrequency: 'monthly', priority: 0.9  },
-  // ]
+  const localSeoRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE}/construction-company-coimbatore`,     lastModified: now, changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${BASE}/builders-coimbatore`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${BASE}/residential-construction-coimbatore`, lastModified: now, changeFrequency: 'monthly', priority: 0.9  },
+    { url: `${BASE}/commercial-construction-coimbatore`,  lastModified: now, changeFrequency: 'monthly', priority: 0.9  },
+  ]
 
   const blogRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url:             `${BASE}/blog/${post.slug}`,
@@ -49,12 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:        0.6,
   }))
 
-  // const cityRoutes: MetadataRoute.Sitemap = cityNames.map((city) => ({
-  //   url:             `${BASE}/construction-cost/${city}`,
-  //   lastModified:    now,
-  //   changeFrequency: 'monthly' as const,
-  //   priority:        0.85,
-  // }))
+  const cityRoutes: MetadataRoute.Sitemap = cityNames.map((city) => ({
+    url:             `${BASE}/construction-cost/${city}`,
+    lastModified:    now,
+    changeFrequency: 'monthly' as const,
+    priority:        0.85,
+  }))
 
   return [...staticRoutes, ...blogRoutes, ...categoryRoutes, ...tagRoutes]
 }
