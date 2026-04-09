@@ -235,7 +235,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           {['RERA Registered', 'ISO Certified', 'Bank Approved', '9+ Projects Done'].map(tag => (
             <div key={tag} className="flex items-center gap-1.5">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FF6A1A" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span className="font-montserrat text-white/35 text-xs">{tag}</span>
+              <span className="font-montserrat text-white/70 text-xs">{tag}</span>
             </div>
           ))}
         </div> */}

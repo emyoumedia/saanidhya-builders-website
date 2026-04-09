@@ -185,7 +185,7 @@ export default function ContactPage() {
                     <Icon size={15} style={{ color }} />
                   </div>
                   <div className="min-w-0">
-                    <p className="font-montserrat text-[10px] text-white/35 uppercase tracking-wider mb-0.5">
+                    <p className="font-montserrat text-[10px] text-white/70 uppercase tracking-wider mb-0.5">
                       {label}
                     </p>
                     {/* FIX: break-words instead of truncate */}

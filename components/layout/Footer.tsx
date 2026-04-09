@@ -136,7 +136,7 @@ export default function Footer() {
                 )}
               </div>
 
-              <p className="text-[11px] text-white/40">
+              <p className="text-[11px] text-white/70">
                 Trusted construction company in {company.serviceArea.city}
               </p>
             </div>
@@ -233,13 +233,13 @@ export default function Footer() {
 
         {/* ── Bottom bar ── */}
         <div className="py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-montserrat text-[11px] text-white/35">
+          <p className="font-montserrat text-[11px] text-white/70">
             © {new Date().getFullYear()} {company.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {(nav.footerLegal as NavItem[]).map(({ href, label }) => (
               <Link key={href} href={href}
-                className="font-montserrat text-[11px] text-white/35 hover:text-white/60 transition-colors">
+                className="font-montserrat text-[11px] text-white/70 hover:text-white transition-colors">
                 {label}
               </Link>
             ))}
