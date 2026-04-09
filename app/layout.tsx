@@ -11,6 +11,7 @@ import { headers } from 'next/headers'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MetaPixel from '@/components/analytics/MetaPixel'
 import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
+import { Analytics } from "@vercel/analytics/next"
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -170,6 +171,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <GoogleAnalytics />
           <MetaPixel />
           <AnalyticsTracker />
+          <Analytics/>
 
           {!isComingSoon && <Navbar />}
           

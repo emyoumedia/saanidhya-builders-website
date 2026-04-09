@@ -1,34 +1,47 @@
-[
-  {
-    "name": "Sandeep Kumar",
-    "role": "Business Head & Client Relations",
-    "experience": "Business & Management",
-    "image": "/images/about/business-head.webp",
-    "imageAlt": "Sandeep Kumar - Business Head, Saanidhya Builders Coimbatore",
-    "bio": "Leads business operations, client acquisition, legal documentation, budgeting, and project coordination. Ensures every project is professionally managed from initiation to handover.",
-    "linkedin": null,
-    "responsibilities": [
-      "Client acquisition & relations",
-      "Pricing, quotations & deal closing",
-      "Legal documentation & agreements",
-      "Project planning & coordination",
-      "Branding & business growth"
-    ]
-  },
-  {
-    "name": "Sankar",
-    "role": "Execution Head & Site Operations",
-    "experience": "Construction & Engineering",
-    "image": "/images/about/execution-head.webp",
-    "imageAlt": "Sankar - Execution Head, Saanidhya Builders Coimbatore",
-    "bio": "Heads construction execution and site operations. Manages engineers, labor teams, materials, and day-to-day site activities to ensure quality workmanship and adherence to structural standards.",
-    "linkedin": null,
-    "responsibilities": [
-      "Site supervision & management",
-      "Engineering & technical work",
-      "Labor & material management",
-      "Quality control & safety",
-      "On-time project execution"
-    ]
-  }
-]
+{
+  "teams": [
+    {
+      "category": "Business",
+      "members": [
+        {
+          "name": "Sandeep Kumar",
+          "role": "Business Head & Client Relations",
+          "experience": "Business & Management",
+          "image": "/images/about/business-head.webp",
+          "imageAlt": "Sandeep Kumar - Business Head, Saanidhya Builders Coimbatore",
+          "bio": "Leads business operations, client acquisition, legal documentation, budgeting, and project coordination. Ensures every project is professionally managed from initiation to handover.",
+          "linkedin": null,
+          "responsibilities": [
+            "Client acquisition & relations",
+            "Pricing, quotations & deal closing",
+            "Legal documentation & agreements",
+            "Project planning & coordination",
+            "Branding & business growth"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Management & Execution",
+      "members": [
+        {
+          "name": "Sankar",
+          "role": "Execution Head & Site Operations",
+          "experience": "Construction & Engineering",
+          "image": "/images/about/execution-head.webp",
+          "imageAlt": "Sankar - Execution Head, Saanidhya Builders Coimbatore",
+          "bio": "Leads both management and on-site execution, ensuring projects are planned efficiently and delivered with high-quality standards. Oversees engineering teams, materials, timelines, and site operations.",
+          "linkedin": null,
+          "responsibilities": [
+            "Project management & planning",
+            "Site supervision & execution",
+            "Engineering & technical work",
+            "Labor & material management",
+            "Quality control & safety",
+            "On-time project delivery"
+          ]
+        }
+      ]
+    }
+  ]
+}
