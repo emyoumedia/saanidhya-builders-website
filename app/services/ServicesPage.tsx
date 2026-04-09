@@ -117,8 +117,9 @@ function AccordionCard({
                 alt={service.imageAlt}
                 fill
                 className="object-cover"
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 400px"
                 loading="lazy"
+                quality={60}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
             </div>
@@ -170,8 +171,9 @@ function DesktopCard({ service, index }: { service: Service; index: number }) {
               alt={service.imageAlt}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="50vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               loading={index === 0 ? 'eager' : 'lazy'}
+              quality={60}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
 
@@ -337,7 +339,8 @@ function ServiceModal({ service, onClose }: { service: Service | null; onClose: 
                     alt={service.imageAlt}
                     fill
                     className="object-cover"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    quality={60}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
                 </div>
@@ -490,44 +493,48 @@ useEffect(() => {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 pb-14 md:pt-36 md:pb-16 bg-navy relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=75"
-            alt={`Construction services in ${company.serviceArea.city}`}
-            fill
-            className="object-cover opacity-10"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/90 to-navy" />
-        </div>
+      <section className="relative py-28 md:py-36 bg-navy overflow-hidden">
 
-        <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px)`,
-            backgroundSize: '44px 44px',
-          }}
-        />
+  {/* Optional gradient glow */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      background: 'radial-gradient(circle at 50% 0%, rgba(122,46,255,0.4), transparent 60%)'
+    }}
+  />
 
-        <div className="relative container mx-auto px-4 md:px-6 text-center">
-          <AnimatedSection>
-            <span className="inline-flex items-center gap-2 font-montserrat text-xs font-bold text-orange uppercase tracking-widest mb-5 px-4 py-2 rounded-full border border-orange/25 bg-orange/10">
-              <Wrench size={12} /> What We Offer
-            </span>
-            <h1
-              className="font-playfair font-bold text-white mb-4 leading-tight"
-              style={{ fontSize: 'clamp(2rem, 6vw, 3.6rem)' }}
-            >
-              Construction{' '}
-              <span className="gradient-text italic">Services</span>
-            </h1>
-            <p className="font-montserrat text-white/50 text-sm md:text-base max-w-md mx-auto mb-8">
-              {services.length} expert services · {company.serviceArea.city}, Tamil Nadu
-            </p>    
-          </AnimatedSection>
-        </div>
-      </section>
+  {/* Optional grid pattern */}
+  <div
+    className="absolute inset-0 opacity-[0.03]"
+    style={{
+      backgroundImage: `linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),
+                        linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px)`,
+      backgroundSize: '44px 44px',
+    }}
+  />
+
+  {/* Content */}
+  <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
+    <AnimatedSection>
+      <span className="inline-flex items-center gap-2 font-montserrat text-xs font-bold text-orange uppercase tracking-widest mb-5 px-4 py-2 rounded-full border border-orange/25 bg-orange/10">
+        <Wrench size={12} /> What We Offer
+      </span>
+
+      <h1
+        className="font-playfair font-bold text-white mb-4 leading-tight"
+        style={{ fontSize: 'clamp(2rem, 6vw, 3.6rem)' }}
+      >
+        Construction{' '}
+        <span className="gradient-text italic">Services</span>
+      </h1>
+
+      <p className="font-montserrat text-white/50 text-sm md:text-base max-w-md mx-auto mb-8">
+        {services.length} expert services · {company.serviceArea.city}, Tamil Nadu
+      </p>
+    </AnimatedSection>
+  </div>
+
+</section>
 
       {/* Content */}
       <section className="py-10 md:py-16 bg-cream">

@@ -54,7 +54,7 @@ type AboutData = {
 const aboutData = aboutRaw as unknown as AboutData
 
 export default function AboutPage() {
-  const team = teamData as unknown as TeamMember[]
+  const team = (teamData?.teams || []).flatMap((g: any) => g.members || [])
   const values = aboutData.values
 
   return (
