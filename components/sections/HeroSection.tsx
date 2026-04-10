@@ -92,47 +92,46 @@ export default function HeroSection() {
         {/* ── Background ──────────────────────────────────────────────────── */}
         <div className="absolute inset-0" aria-hidden="true">
 
-          {/*
-            ✅ FIX 1 — LCP image is a plain <div>, NOT wrapped in <m.div>
-            Framer Motion's opacity:0 initial state was the #1 cause of
-            LCP = 9.6s. The browser couldn't "see" the image until the
-            animation finished. Now it renders immediately.
-          */}
-          <AnimatePresence mode="sync">
-            <m.div
-              key={slide}
-              initial={{ opacity: slide === 0 ? 0.18 : 0 }}   // ✅ slide 0 skips fade-in
-              animate={{ opacity: 0.15 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: slide === 0 ? 0 : 1.0, ease: 'easeInOut' }}
-              className="absolute inset-0"
-            >
-              {/*
-                ✅ FIX 2 — Responsive sizes: mobile gets ~400px, not 1920px.
-                sizes="(max-width: 640px) 640w, (max-width: 1024px) 1024w, 1920w"
-                Next.js will pick the right srcset entry automatically.
+       {/* ✅ Slide 0: plain div, no animation, no opacity:0 — LCP sees it immediately */}
+            {slide === 0 && (
+              <div className="absolute inset-0" style={{ opacity: 0.25 }}>
+                <Image
+                  src={SLIDES[0].bg}
+                  alt={SLIDES[0].bgAlt}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
+                  quality={45}
+                  className="object-cover object-center"
+                />
+              </div>
+            )}
 
-                ✅ FIX 3 — quality={45} (was 60): hero bg is 15% opacity,
-                nobody can tell the difference at lower quality.
-
-                ✅ priority on slide 0 only: tells browser to preload this
-                one image, not all three.
-              */}
-              <Image
-                src={current.bg}
-                alt={current.bgAlt}
-                fill
-                priority={slide === 0}
-                loading="eager"
-                sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-                quality={45}
-                className="object-cover object-center"
-              />
-            </m.div>
-          </AnimatePresence>
+            {/* Animated transitions for slides 1, 2, ... */}
+            <AnimatePresence mode="sync">
+              {slide > 0 && (
+                <m.div
+                  key={slide}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.12 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.0, ease: 'easeInOut' }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={current.bg}
+                    alt={current.bgAlt}
+                    fill
+                    sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
+                    quality={45}
+                    className="object-cover object-center"
+                  />
+                </m.div>
+              )}
+            </AnimatePresence>
 
           {/* Dark overlay */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(115deg,rgba(11,15,59,0.97) 0%,rgba(11,15,59,0.85) 50%,rgba(11,15,59,0.55) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(115deg,rgba(11,15,59,0.92) 0%,rgba(11,15,59,0.75) 50%,rgba(11,15,59,0.55) 100%)' }} />
           {/* Accent glows — kept but won't affect LCP */}
           <div style={{ position: 'absolute', bottom: 0, left: 0, width: '450px', height: '320px', pointerEvents: 'none', background: 'radial-gradient(ellipse at bottom left,rgba(255,106,26,0.12) 0%,transparent 70%)' }} />
           <div style={{ position: 'absolute', top: 0, right: 0, width: '520px', height: '400px', pointerEvents: 'none', background: 'radial-gradient(ellipse at top right,rgba(122,46,255,0.14) 0%,transparent 65%)' }} />

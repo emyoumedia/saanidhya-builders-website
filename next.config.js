@@ -10,26 +10,31 @@ const securityHeaders = [
 
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
+  // ✅ Single images block — no duplicate
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400,
-    qualities: [35,45,50,55,60, 65,75],
+    qualities: [35, 45, 50, 55, 60, 65, 75],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.unsplash.com' }
+    ],
+    // ✅ unoptimized: true is REMOVED
   },
+
   async headers() {
-  return [
-    {
-      source: '/(.*)',
-      headers: securityHeaders,
-    }
-  ]
-},
- images: {
-    unoptimized: true,
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      }
+    ]
   },
+
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },

@@ -67,7 +67,8 @@ export default function Navbar() {
               <Image
                 src="/logo/logo.png"
                 alt="Saanidhya Builders logo"
-                width={600} height={600} priority
+                width={44} height={44} priority
+                sizes="44px"
                 style={{ height: '44px', width: '44px', objectFit: 'contain' }}
               />
             </div>

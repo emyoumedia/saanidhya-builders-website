@@ -12,6 +12,7 @@ import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MetaPixel from '@/components/analytics/MetaPixel'
 import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
 import { Analytics } from "@vercel/analytics/next"
+import { SLIDES } from '@/components/sections/HeroSection'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -165,13 +166,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
+            <head>
+            `{/* ✅ Preload LCP hero image so browser fetches it immediately */}
+            <link
+              rel="preload"
+              as="image"
+              href={SLIDES[0].bg}
+              fetchPriority="high"
+            />
+          </head>`
            <body>
           <ProgressBar />
           <ScrollToTop />
           <GoogleAnalytics />
           <MetaPixel />
           <AnalyticsTracker />
-          <Analytics/>
+          {process.env.VERCEL_ENV && <Analytics />}
 
           {!isComingSoon && <Navbar />}
           
