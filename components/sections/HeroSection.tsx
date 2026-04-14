@@ -35,6 +35,9 @@ export const SLIDES = sorted.slice(0, MAX_SLIDES).map((s: any) => ({
   serviceId: s.id,
 }))
 
+
+export const HERO_LCP_IMAGE: string = SLIDES[0]?.bg ?? ''
+
 // ─── Stats ────────────────────────────────────────────────────────────────────
 const co = company as any
 

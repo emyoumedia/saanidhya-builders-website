@@ -12,7 +12,7 @@ import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MetaPixel from '@/components/analytics/MetaPixel'
 import AnalyticsTracker from '@/components/analytics/AnalyticsTracker'
 import { Analytics } from "@vercel/analytics/next"
-import { SLIDES } from '@/components/sections/HeroSection'
+import { HERO_LCP_IMAGE } from '@/components/sections/HeroSection'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -168,13 +168,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
             <head>
             `{/* ✅ Preload LCP hero image so browser fetches it immediately */}
+            {HERO_LCP_IMAGE && (
             <link
               rel="preload"
               as="image"
-              href={SLIDES[0].bg}
+              href={HERO_LCP_IMAGE}
               fetchPriority="high"
             />
-          </head>`
+          )}
+          </head>
            <body>
           <ProgressBar />
           <ScrollToTop />
