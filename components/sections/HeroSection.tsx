@@ -99,7 +99,7 @@ export default function HeroSection() {
             {slide === 0 && (
               <div className="absolute inset-0" style={{ opacity: 0.10 }}>
                 <Image
-                  src={SLIDES[0].bg}
+                  src={SLIDES[0].bg} 
                   alt={SLIDES[0].bgAlt}
                   fill
                   priority
