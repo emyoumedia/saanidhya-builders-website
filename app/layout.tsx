@@ -166,17 +166,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-            <head>
-            `{/* ✅ Preload LCP hero image so browser fetches it immediately */}
-            {HERO_LCP_IMAGE && (
-            <link
-              rel="preload"
-              as="image"
-              href={HERO_LCP_IMAGE}
-              fetchPriority="high"
-            />
-          )}
-          </head>
+           <head>
+  {HERO_LCP_IMAGE && (
+    <link rel="preload" as="image" href={HERO_LCP_IMAGE} fetchPriority="high" />
+  )}
+</head>
            <body>
           <ProgressBar />
           <ScrollToTop />

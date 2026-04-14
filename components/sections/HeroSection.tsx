@@ -97,7 +97,7 @@ export default function HeroSection() {
 
        {/* ✅ Slide 0: plain div, no animation, no opacity:0 — LCP sees it immediately */}
             {slide === 0 && (
-              <div className="absolute inset-0" style={{ opacity: 0.25 }}>
+              <div className="absolute inset-0" style={{ opacity: 0.10 }}>
                 <Image
                   src={SLIDES[0].bg}
                   alt={SLIDES[0].bgAlt}
@@ -116,7 +116,7 @@ export default function HeroSection() {
                 <m.div
                   key={slide}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.12 }}
+                  animate={{ opacity: 0.10 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1.0, ease: 'easeInOut' }}
                   className="absolute inset-0"
