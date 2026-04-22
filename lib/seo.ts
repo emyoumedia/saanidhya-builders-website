@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { BlogMeta } from '@/data/types'
 
-const BASE = 'https://www.saanidhyabuilders.com'
+const BASE = 'https://saanidhyabuilders.com'
 const SITE = 'Saanidhya Builders'
 
 export function cap(s: string) { return s.charAt(0).toUpperCase() + s.slice(1) }
