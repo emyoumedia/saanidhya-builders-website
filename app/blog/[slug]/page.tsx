@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: Props) {
   const allPosts     = getAllPosts()
   const recentPosts  = allPosts.filter((p) => p.slug !== post.slug).slice(0, 4)
   const popularPosts = getFeaturedPosts(3).filter((p) => p.slug !== post.slug)
-  const url          = `https://www.saanidhyabuilders.com/blog/${post.slug}`
+  const url          = `https://saanidhyabuilders.com/blog/${post.slug}`
 
   const categoryCounts: Record<string, number> = {}
   categories.forEach((cat) => {
