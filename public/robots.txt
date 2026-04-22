@@ -11,4 +11,4 @@ User-agent: Googlebot-Image
 Allow: /images/
 
 # Sitemap location
-Sitemap: https://www.saanidhyabuilders.com/sitemap.xml
+Sitemap: https://saanidhyabuilders.com/sitemap.xml

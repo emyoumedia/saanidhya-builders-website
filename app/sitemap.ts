@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { getAllPosts, getAllCategories, getAllTags } from '@/lib/blog'
 import { cityNames } from '@/data/cities'
 
-const BASE = 'https://www.saanidhyabuilders.com'
+const BASE = 'https://saanidhyabuilders.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()

@@ -11,7 +11,7 @@ function buildMetadata(category: string): Metadata {
   return {
     title: `${cap} Articles | Saanidhya Builders Blog`,
     description: `Browse all ${cap} articles from Saanidhya Builders — expert advice for homebuilders in Coimbatore and Tamil Nadu.`,
-    alternates: { canonical: `https://www.saanidhyabuilders.com/blog/category/${category}` },
+    alternates: { canonical: `https://saanidhyabuilders.com/blog/category/${category}` },
   }
 }
 
