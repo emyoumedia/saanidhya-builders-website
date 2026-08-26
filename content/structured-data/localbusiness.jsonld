@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Saanidhya Builders",
+  "image": "https://saanidhyabuilders.com/images/logo.png",
+  "@id": "https://saanidhyabuilders.com",
+  "url": "https://saanidhyabuilders.com",
+  "telephone": "+917448811611",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coimbatore",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 11.0168,
+    "longitude": 76.9558
+  },
+  "openingHours": "Mo-Sa 09:00-18:00"
+}
